@@ -2626,41 +2626,54 @@ nav a,
   }
 }
 
-/* Business Master Template – kundenfertige Restaurant-Inhalte */
-.restaurant-story-section{
-  background:
-    radial-gradient(circle at 18% 24%, rgba(212,162,79,.14), transparent 32%),
-    radial-gradient(circle at 82% 78%, rgba(139,30,30,.10), transparent 30%);
+/* Aurum Berlin – Business V21 Basis, kundenfertige Inhalte */
+:root{
+  --aurum-black:#050302;
+  --aurum-gold:#d4a24f;
+  --aurum-gold-soft:#f5d99e;
+  --aurum-cream:#fff3df;
+  --aurum-wood:#6e4b2a;
+  --aurum-bordeaux:#7d1717;
 }
 
-.story-grid{
+.aurum-story-section{
+  background:
+    radial-gradient(circle at 20% 20%, rgba(212,162,79,.15), transparent 32%),
+    radial-gradient(circle at 85% 80%, rgba(125,23,23,.13), transparent 30%);
+}
+
+.aurum-story-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:38px;
   align-items:center;
 }
 
-.story-image{
+.aurum-story-image{
   min-height:560px;
   border-radius:42px;
   border:1px solid var(--line);
   background:
     linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.58)),
-    url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=85") center/cover;
+    url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1500&q=85") center/cover;
   box-shadow:var(--shadow);
 }
 
-.story-copy p{
+.aurum-story-copy p{
   margin-bottom:18px;
 }
 
-.cinematic-showcase-section .section-heading h2::after,
-.luxury-experience-section .section-heading h2::after,
-.agentur-final-section .section-heading h2::after{
-  content:"";
+.brand strong,
+.site-footer strong{
+  letter-spacing:.04em;
+}
+
+.hero h1,
+.subpage-title{
+  text-transform:none;
 }
 
 @media(max-width:1100px){
-  .story-grid{grid-template-columns:1fr}
-  .story-image{min-height:390px}
+  .aurum-story-grid{grid-template-columns:1fr}
+  .aurum-story-image{min-height:390px}
 }
