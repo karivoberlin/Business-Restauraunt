@@ -1,11 +1,11 @@
-Restaurant Business V12 – Ultimate Agentur-Version (Final)
+Restaurant Business V10 – Conversion & Admin
 
-Finale Verbesserungen:
-- Finale Projektstruktur
-- Verkaufsfertige Agentur-Vorlage
-- Platzhalter für Logo, Bilder, Texte und Formspree
-- SEO-, Performance- und Mehrsprachigkeitsbasis
-- Catering, Events, Karriere, Trust, Reservierung und Online-Speisekarte integriert
-- Bereit als Master-Template für Kundenprojekte
+Neu in V10:
+- Conversion-Optimierung vorbereitet
+- Admin-freundliche Struktur
+- Platzhalter für austauschbare Inhalte
+- Verbesserte CTA-Logik
+- Bessere Organisation für spätere Erweiterungen
 
-Dies ist die finale Version des Business-Pakets.
+Nächster Schritt:
+Business V11 = Final Polish
