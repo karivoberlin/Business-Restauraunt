@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Restaurant Business V7 | Karriere & Jobs</title>
+  <title>Restaurant Business V8 | Mehrsprachigkeit DE/EN</title>
   <meta name="description" content="Restaurant Business V1 Ultimate Edition: finales Master Template mit Premium Design, Luxus Extras, Reservierung, Galerie, Bewertungen, Events, Gutscheinen und High-End Animationen." />
   <meta name="author" content="Karivo" />
   <meta property="og:title" content="Restaurant Name | Premium Restaurant Website Ultimate" />
@@ -51,13 +51,19 @@
       <a href="#business">Business</a>
       <a href="#catering">Catering</a>
       <a href="#trust">Trust</a>
+      <a href="#mehrsprachig">DE/EN</a>
       <a href="#karriere">Jobs</a>
       <a href="#gallery">Galerie</a>
       <a href="#reservation">Reservierung</a>
       <a href="#contact">Kontakt</a>
     </nav>
 
-    <a href="#reservation" class="header-button">Tisch reservieren</a>
+    <a href="#reservation" class="header-button" data-i18n="navReserve">Tisch reservieren</a>
+
+    <div class="language-switcher" aria-label="Sprache wechseln">
+      <button class="language-btn active" data-lang="de">DE</button>
+      <button class="language-btn" data-lang="en">EN</button>
+    </div>
 
     <button class="menu-button" id="menuButton" aria-label="Menü öffnen">
       <span></span>
@@ -83,15 +89,15 @@
 
       <div class="container hero-inner">
         <div class="hero-left reveal">
-          <p class="overline">Business V7 · Karriere & Jobs</p>
-          <h1>Professionell, modern und jetzt mit Karriere- und Jobbereich.</h1>
+          <p class="overline"><span data-i18n="heroOverline">Business V8 · Mehrsprachigkeit DE/EN</span></p>
+          <h1><span data-i18n="heroTitle">Professionell, modern und jetzt mit vorbereitetem DE/EN-Sprachwechsel.</span></h1>
           <p class="hero-text">
-            Business V7 ergänzt einen Karrierebereich: offene Stellen, Benefits, Bewerbungsformular und ein professioneller Arbeitgeber-Auftritt für Restaurants.
+            <span data-i18n="heroText">Business V8 ergänzt Mehrsprachigkeit: DE/EN Sprachwechsel, übersetzte Kernbereiche, internationale Gäste und professioneller Auftritt für Touristen.</span>
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-gold magnetic" href="#reservation">Reservierung starten</a>
-            <a class="btn btn-ghost magnetic" href="#experience">Ultimate ansehen</a>
+            <a class="btn btn-gold magnetic" href="#reservation"><span data-i18n="heroPrimary">Reservierung starten</span></a>
+            <a class="btn btn-ghost magnetic" href="#experience"><span data-i18n="heroSecondary">Business ansehen</span></a>
           </div>
 
           <div class="premium-proof">
@@ -160,7 +166,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="overline">Business Fokus</p>
-          <h2>Mehr als schön: diese Website soll Anfragen bringen.</h2>
+          <h2><span data-i18n="businessFocusTitle">Mehr als schön: diese Website soll Anfragen bringen.</span></h2>
           <p>Business V2 ist nicht nur luxuriös, sondern klar auf Reservierungen, Events, Firmenkunden und Catering ausgerichtet.</p>
         </div>
 
@@ -190,7 +196,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="overline">Catering & Events</p>
-          <h2>Für Firmenfeiern, Geburtstage und große Gruppen.</h2>
+          <h2><span data-i18n="cateringTitle">Für Firmenfeiern, Geburtstage und große Gruppen.</span></h2>
           <p>Business V3 ergänzt Bereiche, mit denen Restaurants größere Anfragen und bessere Umsätze gewinnen können.</p>
         </div>
 
@@ -600,11 +606,42 @@
 
     
 
+
+    <section class="section multilingual-section" id="mehrsprachig">
+      <div class="container multilingual-grid">
+        <div class="multilingual-copy reveal">
+          <p class="overline">Mehrsprachigkeit</p>
+          <h2>Für internationale Gäste und Touristen.</h2>
+          <p>Business V8 ist auf Deutsch und Englisch vorbereitet. Besonders stark für Restaurants in Städten, Hotels, Tourismus-Gebieten oder Flughafennähe.</p>
+
+          <div class="language-benefits">
+            <div><strong>DE</strong><span>Lokale Gäste</span></div>
+            <div><strong>EN</strong><span>Touristen</span></div>
+            <div><strong>SEO</strong><span>Internationaler</span></div>
+          </div>
+        </div>
+
+        <div class="translation-preview reveal shine-card">
+          <div class="translation-tabs">
+            <button class="translation-tab active">Deutsch</button>
+            <button class="translation-tab">English</button>
+          </div>
+
+          <div class="translation-card">
+            <p class="overline">Beispiel</p>
+            <h3 data-i18n="translationPreviewTitle">Reservieren Sie Ihren besonderen Abend.</h3>
+            <p data-i18n="translationPreviewText">Ein professionelles Reservierungssystem für Restaurants, Events und große Gruppen.</p>
+            <a class="btn btn-gold magnetic" href="#reservation" data-i18n="translationPreviewButton">Tisch reservieren</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section career-section" id="karriere">
       <div class="container">
         <div class="section-heading reveal">
           <p class="overline">Karriere & Jobs</p>
-          <h2>Ein professioneller Arbeitgeber-Auftritt.</h2>
+          <h2><span data-i18n="careerTitle">Ein professioneller Arbeitgeber-Auftritt.</span></h2>
           <p>Business V7 macht die Website auch für Recruiting stark: offene Stellen, Benefits und schnelle Bewerbung.</p>
         </div>
 
@@ -721,7 +758,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="overline">Business Reservierung</p>
-          <h2>Reservierungssystem mit klarer Anfrage-Logik.</h2>
+          <h2><span data-i18n="reservationTitle">Reservierungssystem mit klarer Anfrage-Logik.</span></h2>
           <p>Business V5 macht aus dem einfachen Formular einen stärkeren Conversion-Bereich mit Zeitfenstern, Anlass, Gästeanzahl und Schnellwahl.</p>
         </div>
 
@@ -837,7 +874,7 @@
       <div class="container contact-map-grid">
         <div class="premium-contact-card reveal shine-card">
           <p class="overline">Kontakt</p>
-          <h2>Besuchen Sie uns.</h2>
+          <h2><span data-i18n="contactTitle">Besuchen Sie uns.</span></h2>
 
           <div class="contact-lines">
             <p><strong>Adresse</strong><span>Musterstraße 1, 12345 Berlin</span></p>
@@ -888,7 +925,7 @@
     <div class="container footer-grid">
       <div>
         <strong>Restaurant Name</strong>
-        <p>Karivo Restaurant Business Vorlage — V7 Karriere & Jobs.</p>
+        <p>Karivo Restaurant Business Vorlage — V8 Mehrsprachigkeit.</p>
       </div>
 
       <div>

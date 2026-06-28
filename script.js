@@ -167,3 +167,63 @@ if (applicationForm) {
     applicationNote.classList.add("success");
   });
 }
+
+// Business V8: einfacher DE/EN Sprachwechsel
+const translations = {
+  de: {
+    navReserve: "Tisch reservieren",
+    heroOverline: "Business V8 · Mehrsprachigkeit DE/EN",
+    heroTitle: "Professionell, modern und jetzt mit vorbereitetem DE/EN-Sprachwechsel.",
+    heroText: "Business V8 ergänzt Mehrsprachigkeit: DE/EN Sprachwechsel, übersetzte Kernbereiche, internationale Gäste und professioneller Auftritt für Touristen.",
+    heroPrimary: "Reservierung starten",
+    heroSecondary: "Business ansehen",
+    businessFocusTitle: "Mehr als schön: diese Website soll Anfragen bringen.",
+    cateringTitle: "Für Firmenfeiern, Geburtstage und große Gruppen.",
+    careerTitle: "Ein professioneller Arbeitgeber-Auftritt.",
+    reservationTitle: "Reservierungssystem mit klarer Anfrage-Logik.",
+    contactTitle: "Besuchen Sie uns.",
+    translationPreviewTitle: "Reservieren Sie Ihren besonderen Abend.",
+    translationPreviewText: "Ein professionelles Reservierungssystem für Restaurants, Events und große Gruppen.",
+    translationPreviewButton: "Tisch reservieren"
+  },
+  en: {
+    navReserve: "Book a table",
+    heroOverline: "Business V8 · DE/EN Language Switch",
+    heroTitle: "Professional, modern and ready for bilingual restaurant websites.",
+    heroText: "Business V8 adds multilingual support: German/English switching, translated key sections, international guests and a professional experience for tourists.",
+    heroPrimary: "Start reservation",
+    heroSecondary: "View business system",
+    businessFocusTitle: "More than beautiful: this website is built to generate requests.",
+    cateringTitle: "For corporate events, birthdays and large groups.",
+    careerTitle: "A professional employer presence.",
+    reservationTitle: "Reservation system with clear request logic.",
+    contactTitle: "Visit us.",
+    translationPreviewTitle: "Reserve your special evening.",
+    translationPreviewText: "A professional reservation system for restaurants, events and large groups.",
+    translationPreviewButton: "Book a table"
+  }
+};
+
+const languageButtons = document.querySelectorAll(".language-btn");
+
+function setLanguage(lang) {
+  document.documentElement.lang = lang;
+  localStorage.setItem("businessRestaurantLanguage", lang);
+
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    if (translations[lang] && translations[lang][key]) {
+      element.textContent = translations[lang][key];
+    }
+  });
+
+  languageButtons.forEach(button => {
+    button.classList.toggle("active", button.dataset.lang === lang);
+  });
+}
+
+languageButtons.forEach(button => {
+  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+
+setLanguage(localStorage.getItem("businessRestaurantLanguage") || "de");
