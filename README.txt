@@ -1,11 +1,13 @@
-Restaurant Business V10 – Conversion & Admin
+# Restaurant Business V11 – Final Polish (richtig)
 
-Neu in V10:
-- Conversion-Optimierung vorbereitet
-- Admin-freundliche Struktur
-- Platzhalter für austauschbare Inhalte
-- Verbesserte CTA-Logik
-- Bessere Organisation für spätere Erweiterungen
+Diese Version basiert sauber auf Business V10 und enthält wieder die komplette Website.
+
+Neu in V11:
+- Final-Polish-Sektion
+- stärkere Conversion-Ausrichtung
+- bessere CTA-Wirkung
+- professioneller Business-Auftritt
+- echte vollständige Projektdateien: index.html, style.css, script.js
 
 Nächster Schritt:
-Business V11 = Final Polish
+Business V12 = finale Ultimate Agentur-Version.

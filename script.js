@@ -227,3 +227,13 @@ languageButtons.forEach(button => {
 });
 
 setLanguage(localStorage.getItem("businessRestaurantLanguage") || "de");
+
+// Business V11: CTA Polish
+document.querySelectorAll(".btn-gold").forEach((button) => {
+  button.addEventListener("mouseenter", () => {
+    button.setAttribute("data-polish", "active");
+  });
+  button.addEventListener("mouseleave", () => {
+    button.removeAttribute("data-polish");
+  });
+});
