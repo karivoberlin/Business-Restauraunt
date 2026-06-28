@@ -703,3 +703,87 @@ console.log("Restaurant Business V20 Agentur Final geladen");
     });
   }
 })();
+
+// Phase 2 Speisekarte Complete
+(function(){
+  const grid = document.getElementById("aurumMenuGrid");
+  if (!grid) return;
+
+  const items = {
+    vorspeisen: [
+      {name:"Burrata & Feige", desc:"Burrata, marinierte Feige, Rucola, Walnuss und Balsamico.", price:"13,90 €", tags:["vegetarisch","signature","N"], img:"https://images.unsplash.com/photo-1543353071-10c8ba85a904?auto=format&fit=crop&w=1000&q=85"},
+      {name:"Carpaccio Aurum", desc:"Rindercarpaccio, Parmesan, Zitrone, Rucola und Olivenöl.", price:"16,90 €", tags:["signature","glutenfrei"], img:"https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1000&q=85"},
+      {name:"Bruschetta Gold", desc:"Geröstetes Sauerteigbrot, Tomaten, Basilikum und Kräuteröl.", price:"9,90 €", tags:["vegetarisch","G"], img:"https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?auto=format&fit=crop&w=1000&q=85"}
+    ],
+    hauptgerichte: [
+      {name:"Trüffel Pasta Aurum", desc:"Hausgemachte Pasta, Trüffelcreme, Parmesan und schwarzer Trüffel.", price:"24,90 €", tags:["signature","vegetarisch","G","L"], img:"https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1000&q=85"},
+      {name:"Filet Royal", desc:"Dry-Aged-Rinderfilet, Jus, Marktgemüse und Kartoffelvariation.", price:"34,90 €", tags:["signature","glutenfrei"], img:"https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1000&q=85"},
+      {name:"Lachs Zitronenbutter", desc:"Gebratener Lachs, Zitronenbutter, Kräuter und Gemüse.", price:"27,90 €", tags:["glutenfrei","L"], img:"https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1000&q=85"}
+    ],
+    desserts: [
+      {name:"Chocolate Gold", desc:"Warmer Schokoladenkern, Vanille, Beeren und feine Akzente.", price:"10,90 €", tags:["signature","vegetarisch","G","L"], img:"https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1000&q=85"},
+      {name:"Crème Brûlée", desc:"Klassisch karamellisiert mit Vanille und saisonalen Früchten.", price:"9,90 €", tags:["vegetarisch","glutenfrei","L"], img:"https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?auto=format&fit=crop&w=1000&q=85"},
+      {name:"Sorbet Variation", desc:"Drei Sorbets, Minze und frische Beeren.", price:"8,50 €", tags:["vegetarisch","glutenfrei"], img:"https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=1000&q=85"}
+    ],
+    bar: [
+      {name:"Riesling Reserve", desc:"Mineralisch, elegant und perfekt zur saisonalen Küche.", price:"8,90 €", tags:["weine","glutenfrei"], img:"https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1000&q=85"},
+      {name:"Aurum Spritz", desc:"Hausaperitif mit Zitrus, Kräutern und Schaumwein.", price:"11,90 €", tags:["signature"], img:"https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1000&q=85"},
+      {name:"Pinot Noir", desc:"Samtig, tief und ideal zu Filet oder Private Dining.", price:"9,90 €", tags:["weine"], img:"https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1000&q=85"}
+    ]
+  };
+
+  let category = "vorspeisen";
+  let filter = "all";
+  let search = "";
+
+  const searchInput = document.getElementById("aurumMenuSearch");
+  const filterButtons = document.querySelectorAll(".aurum-filter");
+  const categoryButtons = document.querySelectorAll(".aurum-category");
+
+  function render(){
+    const result = (items[category] || []).filter(item => {
+      const hay = (item.name + " " + item.desc + " " + item.tags.join(" ")).toLowerCase();
+      const matchSearch = !search || hay.includes(search);
+      const matchFilter = filter === "all" || item.tags.includes(filter);
+      return matchSearch && matchFilter;
+    });
+
+    grid.innerHTML = result.length ? result.map(item => `
+      <article class="aurum-menu-card tilt-card shine-card">
+        <div class="aurum-menu-image" style="--img:url('${item.img}')"></div>
+        <div class="aurum-menu-body">
+          <div>
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <div class="aurum-menu-tags">${item.tags.map(tag => `<span>${tag}</span>`).join("")}</div>
+          </div>
+          <div class="aurum-menu-footer">
+            <span>Aurum Berlin</span>
+            <strong>${item.price}</strong>
+          </div>
+        </div>
+      </article>
+    `).join("") : `<article class="aurum-menu-card shine-card"><div class="aurum-menu-body"><h3>Kein Gericht gefunden</h3><p>Bitte ändern Sie Suche oder Filter.</p></div></article>`;
+  }
+
+  searchInput && searchInput.addEventListener("input", () => {
+    search = searchInput.value.toLowerCase().trim();
+    render();
+  });
+
+  filterButtons.forEach(btn => btn.addEventListener("click", () => {
+    filterButtons.forEach(item => item.classList.remove("active"));
+    btn.classList.add("active");
+    filter = btn.dataset.filter;
+    render();
+  }));
+
+  categoryButtons.forEach(btn => btn.addEventListener("click", () => {
+    categoryButtons.forEach(item => item.classList.remove("active"));
+    btn.classList.add("active");
+    category = btn.dataset.category;
+    render();
+  }));
+
+  render();
+})();

@@ -1,9 +1,158 @@
 <!DOCTYPE html>
 <html lang="de">
-<head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>Speisekarte | Aurum Berlin Aurum Berlin</title> <meta name="description" content="Digitale Speisekarte mit Suche, Kategorien, Allergenen, Bestseller-Filter und Tagesangeboten." /> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"> <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Speisekarte | Aurum Berlin</title>
+  <meta name="description" content="Speisekarte von Aurum Berlin: Vorspeisen, Hauptgerichte, Desserts, Weinbegleitung und Signature Drinks." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body> <div class="wow-orb-layer"></div> <div class="wow-orb wow-orb-one"></div> <div class="wow-orb wow-orb-two"></div> <div class="wow-spotlight" id="wowSpotlight"></div> <div class="luxury-ambient-layer"></div> <div class="luxury-light luxury-light-one"></div> <div class="luxury-light luxury-light-two"></div> <div class="business-page-transition" id="businessPageTransition"></div> <div class="business-scroll-progress" id="businessScrollProgress"></div> <div class="business-cursor-dot" id="businessCursorDot"></div> <div class="premium-bg"></div> <div class="noise"></div> <header class="premium-header simple-subpage-header"> <a href="index.html#start" class="brand"> <span class="brand-icon">R</span> <span><strong>Aurum Berlin</strong><small>Speisekarte</small></span> </a> <nav class="premium-nav open-desktop"> <a href="index.html">Start</a> <a href="menu.html">Speisekarte</a> <a href="catering.html">Catering</a> <a href="events.html">Events</a> <a href="jobs.html">Jobs</a> <a href="contact.html">Kontakt</a> </nav> <a href="index.html#reservation" class="header-button">Reservieren</a> </header> <main class="subpage-main"> <section class="section menu-hero-v17"> <div class="container menu-hero-grid"> <div class="menu-hero-copy reveal"> <p class="overline">Speisekarte</p> <h1 class="subpage-title">Eine digitale Speisekarte, die verkauft.</h1> <p>Aurum Berlin macht die Menüseite deutlich stärker: Suche, Filter, Allergene, Bestseller, Tagesangebote und hochwertige Gericht-Karten.</p> <div class="hero-actions"> <a class="btn btn-gold" href="#menuExplorer">Gerichte ansehen</a> <a class="btn btn-ghost" href="index.html#reservation">Tisch reservieren</a> </div> </div> <aside class="menu-special-card reveal shine-card tilt-card"> <span>Empfehlung des Küchenchefs</span> <h3>Trüffel Pasta Aurum Signature</h3> <p>Hausgemachte Pasta, cremige Trüffelreduktion, Parmesan und Kräuter.</p> <strong>24,90 €</strong> </aside> </div> </section> <section class="section menu-explorer-section" id="menuExplorer"> <div class="container"> <div class="menu-explorer-toolbar reveal shine-card"> <div class="menu-search-pro"> <span>🔎</span> <input id="proMenuSearch" type="search" placeholder="Gericht suchen, z. B. Pasta, Steak, vegan ..." /> </div> <div class="menu-filter-pro"> <button class="pro-filter active" data-filter="all">Alle</button> <button class="pro-filter" data-filter="bestseller">Bestseller</button> <button class="pro-filter" data-filter="vegetarisch">Vegetarisch</button> <button class="pro-filter" data-filter="vegan">Vegan</button> <button class="pro-filter" data-filter="glutenfrei">Glutenfrei</button> </div> </div> <div class="menu-category-tabs reveal"> <button class="pro-category active" data-category="starter">Vorspeisen</button> <button class="pro-category" data-category="main">Hauptgerichte</button> <button class="pro-category" data-category="dessert">Desserts</button> <button class="pro-category" data-category="drinks">Getränke</button> </div> <div class="pro-menu-layout"> <aside class="menu-info-panel reveal shine-card"> <p class="overline">Menü Info</p> <h3>Allergene & Hinweise</h3> <p>Diese Platzhalter können später mit echten Allergenen, Zutaten und Kundenhinweisen ersetzt werden.</p> <div class="allergen-list"> <span>G Gluten</span> <span>L Laktose</span> <span>N Nüsse</span> <span>V Vegan</span> </div> </aside> <div class="pro-menu-grid reveal" id="proMenuGrid"></div> </div> </div> </section> <section class="section daily-offers-section"> <div class="container"> <div class="section-heading reveal"> <p class="overline">Tagesangebote</p> <h2>Ideal für wechselnde Angebote.</h2> <p>Aurum Berlins können hier Tagesgerichte, Mittagsmenüs oder saisonale Specials präsentieren.</p> </div> <div class="daily-offer-grid"> <article class="daily-offer-card reveal shine-card tilt-card"><span>Lunch</span><h3> Lunch</h3><p>Schnelles Mittagsmenü für Gäste und Firmenkunden.</p><strong>ab 12,90 €</strong></article> <article class="daily-offer-card reveal shine-card tilt-card"><span>Seasonal</span><h3>Saisonkarte</h3><p>Gerichte passend zur Jahreszeit.</p><strong>wechselnd</strong></article> <article class="daily-offer-card reveal shine-card tilt-card"><span>Chef</span><h3>Chef Special</h3><p>Besondere Empfehlung der Küche.</p><strong>auf Anfrage</strong></article> </div> </div> </section> </main> <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> <script src="script.js"></script>
+
+<body class="phase-two-menu">
+  <div class="business-page-transition" id="businessPageTransition"></div>
+  <div class="business-scroll-progress" id="businessScrollProgress"></div>
+  <div class="business-cursor-dot" id="businessCursorDot"></div>
+
+  <div class="luxury-ambient-layer"></div>
+  <div class="luxury-light luxury-light-one"></div>
+  <div class="luxury-light luxury-light-two"></div>
+  <div class="wow-orb-layer"></div>
+  <div class="wow-orb wow-orb-one"></div>
+  <div class="wow-orb wow-orb-two"></div>
+  <div class="wow-spotlight" id="wowSpotlight"></div>
+  <div class="noise"></div>
+
+  <header class="phase-header" id="siteHeader">
+    <a href="index.html" class="brand">
+      <span class="brand-icon">A</span>
+      <span>
+        <strong>Aurum Berlin</strong>
+        <small>Modern Fine Dining</small>
+      </span>
+    </a>
+
+    <nav class="phase-nav" id="mainNav">
+      <a href="index.html">Start</a>
+      <a href="menu.html">Speisekarte</a>
+      <a href="events.html">Events</a>
+      <a href="reservation.html">Reservierung</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+
+    <a href="reservation.html" class="header-button magnetic">Tisch reservieren</a>
+
+    <button class="phase-menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="menu-hero-phase">
+      <div class="menu-hero-bg"></div>
+      <div class="phase-hero-overlay"></div>
+      <div class="phase-hero-beam"></div>
+
+      <div class="container menu-hero-content reveal">
+        <p class="overline">Speisekarte</p>
+        <h1>Geschmack mit goldener Handschrift.</h1>
+        <p>Entdecken Sie saisonale Vorspeisen, Signature-Gerichte, Desserts, ausgewählte Weine und Drinks aus der Aurum Bar.</p>
+
+        <div class="phase-hero-actions">
+          <a href="#menuExplorer" class="btn btn-gold magnetic">Gerichte entdecken</a>
+          <a href="reservation.html" class="btn btn-ghost magnetic">Tisch reservieren</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="phase-section menu-explorer-phase" id="menuExplorer">
+      <div class="container">
+        <div class="menu-toolbar-phase reveal shine-card">
+          <div class="menu-search-phase">
+            <span>🔎</span>
+            <input type="search" id="aurumMenuSearch" placeholder="Gericht suchen, z. B. Trüffel, Steak, Wein ..." />
+          </div>
+
+          <div class="menu-filter-phase">
+            <button class="aurum-filter active" data-filter="all">Alle</button>
+            <button class="aurum-filter" data-filter="signature">Signature</button>
+            <button class="aurum-filter" data-filter="vegetarisch">Vegetarisch</button>
+            <button class="aurum-filter" data-filter="glutenfrei">Glutenfrei</button>
+            <button class="aurum-filter" data-filter="weine">Weine</button>
+          </div>
+        </div>
+
+        <div class="menu-layout-phase">
+          <aside class="menu-side-phase reveal shine-card">
+            <p class="overline">Kategorien</p>
+            <button class="aurum-category active" data-category="vorspeisen">Vorspeisen</button>
+            <button class="aurum-category" data-category="hauptgerichte">Hauptgerichte</button>
+            <button class="aurum-category" data-category="desserts">Desserts</button>
+            <button class="aurum-category" data-category="bar">Wein & Bar</button>
+
+            <div class="menu-note-phase">
+              <strong>Allergene</strong>
+              <p>G = Gluten · L = Laktose · N = Nüsse · V = Vegan</p>
+            </div>
+          </aside>
+
+          <div class="menu-grid-phase reveal" id="aurumMenuGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="phase-section wine-pairing-phase">
+      <div class="container wine-pairing-grid">
+        <div class="wine-pairing-image reveal shine-card"></div>
+        <div class="wine-pairing-copy reveal">
+          <p class="overline">Wine Pairing</p>
+          <h2>Die passende Begleitung zum Menü.</h2>
+          <p>Unsere Weinkarte ist sorgfältig kuratiert und begleitet die Küche mit eleganten Rieslingen, samtigen Rotweinen, Champagner und alkoholfreien Pairings.</p>
+          <a href="reservation.html" class="btn btn-gold magnetic">Dinner reservieren</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="phase-footer">
+    <div class="container phase-footer-grid">
+      <div>
+        <strong>Aurum Berlin</strong>
+        <p>Saisonale Küche. Zeitlose Eleganz.</p>
+      </div>
+
+      <div>
+        <h4>Navigation</h4>
+        <a href="index.html">Start</a>
+        <a href="reservation.html">Reservierung</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Kontakt</a>
+      </div>
+
+      <div>
+        <h4>Kontakt</h4>
+        <a href="tel:+493081479200">030 8147 9200</a>
+        <a href="mailto:kontakt@aurum-berlin.de">kontakt@aurum-berlin.de</a>
+        <a href="contact.html">Friedrichstraße 88, Berlin</a>
+      </div>
+
+      <div>
+        <h4>Rechtliches</h4>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-<!-- Aurum V22 menu polish -->
