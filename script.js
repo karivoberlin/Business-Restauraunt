@@ -304,3 +304,104 @@ console.log("Business V12 Ultimate Agentur-Version geladen");
     });
   }
 })();
+
+// Business V17 – Speisekarte 2.0
+(function(){
+  const proMenuGrid = document.getElementById("proMenuGrid");
+  if (!proMenuGrid) return;
+
+  const proMenu = {
+    starter: [
+      {icon:"🥖", name:"Bruschetta Classica", desc:"Geröstetes Brot, Tomaten, Basilikum und Olivenöl.", price:"8,90 €", tags:["vegetarisch","bestseller"], allergens:["G"]},
+      {icon:"🥗", name:"Goldener Salat", desc:"Blattsalate, Nüsse, Kräuter und Hausdressing.", price:"11,90 €", tags:["vegetarisch","glutenfrei"], allergens:["N"]},
+      {icon:"🍲", name:"Suppe des Tages", desc:"Saisonal gekocht und täglich wechselnd.", price:"7,50 €", tags:["vegan"], allergens:[]}
+    ],
+    main: [
+      {icon:"🍝", name:"Trüffel Pasta", desc:"Hausgemachte Pasta mit Trüffelcreme und Parmesan.", price:"24,90 €", tags:["vegetarisch","bestseller"], allergens:["G","L"]},
+      {icon:"🥩", name:"Filet Royal", desc:"Rinderfilet, Jus, Gemüse und Kartoffelvariation.", price:"34,90 €", tags:["bestseller","glutenfrei"], allergens:[]},
+      {icon:"🐟", name:"Lachs Signature", desc:"Gebratener Lachs mit Zitronenbutter und Marktgemüse.", price:"27,90 €", tags:["glutenfrei"], allergens:["L"]}
+    ],
+    dessert: [
+      {icon:"🍫", name:"Chocolate Gold", desc:"Warmer Schokoladenkern mit Vanilleeis.", price:"10,90 €", tags:["bestseller","vegetarisch"], allergens:["G","L"]},
+      {icon:"🍓", name:"Panna Cotta", desc:"Cremig, frisch und mit Beeren serviert.", price:"8,90 €", tags:["vegetarisch","glutenfrei"], allergens:["L"]},
+      {icon:"🍨", name:"Sorbet Variation", desc:"Fruchtig, leicht und perfekt zum Abschluss.", price:"7,50 €", tags:["vegan","glutenfrei"], allergens:[]}
+    ],
+    drinks: [
+      {icon:"🍷", name:"Hauswein", desc:"Rot oder Weiß, passend zur Küche ausgewählt.", price:"5,90 €", tags:["bestseller","vegan"], allergens:[]},
+      {icon:"🍸", name:"Golden Aperitif", desc:"Spritzig, frisch und ideal zum Start.", price:"9,90 €", tags:["bestseller"], allergens:[]},
+      {icon:"☕", name:"Espresso", desc:"Kräftig, aromatisch und frisch zubereitet.", price:"2,90 €", tags:["vegan","glutenfrei"], allergens:[]}
+    ]
+  };
+
+  let currentCategory = "starter";
+  let currentFilter = "all";
+  let searchTerm = "";
+
+  const search = document.getElementById("proMenuSearch");
+  const filters = document.querySelectorAll(".pro-filter");
+  const categories = document.querySelectorAll(".pro-category");
+
+  function renderProMenu(){
+    const items = (proMenu[currentCategory] || []).filter(item => {
+      const text = (item.name + " " + item.desc + " " + item.tags.join(" ")).toLowerCase();
+      const matchSearch = !searchTerm || text.includes(searchTerm);
+      const matchFilter = currentFilter === "all" || item.tags.includes(currentFilter);
+      return matchSearch && matchFilter;
+    });
+
+    if (!items.length) {
+      proMenuGrid.innerHTML = '<article class="pro-menu-card no-menu-result shine-card"><div><h3>Kein Gericht gefunden</h3><p>Bitte ändere Suche oder Filter.</p></div></article>';
+      return;
+    }
+
+    proMenuGrid.innerHTML = items.map(item => `
+      <article class="pro-menu-card tilt-card shine-card">
+        <div>
+          <div class="pro-menu-card-top">
+            <div class="pro-menu-icon">${item.icon}</div>
+            <div><h3>${item.name}</h3><p>${item.desc}</p></div>
+          </div>
+          <div class="pro-badges">
+            ${item.tags.map(tag => `<span>${tag}</span>`).join("")}
+            ${item.allergens.map(a => `<span>${a}</span>`).join("")}
+          </div>
+        </div>
+        <div class="pro-menu-footer">
+          <span>Restaurant Name</span>
+          <strong class="pro-menu-price">${item.price}</strong>
+        </div>
+      </article>
+    `).join("");
+
+    document.querySelectorAll(".tilt-card").forEach(card => {
+      card.addEventListener("mousemove", e => {
+        const r = card.getBoundingClientRect();
+        const ry = ((e.clientX - r.left) / r.width - .5) * 8;
+        const rx = ((e.clientY - r.top) / r.height - .5) * -8;
+        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+      });
+      card.addEventListener("mouseleave", () => card.style.transform = "");
+    });
+  }
+
+  if (search) search.addEventListener("input", () => {
+    searchTerm = search.value.toLowerCase().trim();
+    renderProMenu();
+  });
+
+  filters.forEach(btn => btn.addEventListener("click", () => {
+    filters.forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+    currentFilter = btn.dataset.filter;
+    renderProMenu();
+  }));
+
+  categories.forEach(btn => btn.addEventListener("click", () => {
+    categories.forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+    currentCategory = btn.dataset.category;
+    renderProMenu();
+  }));
+
+  renderProMenu();
+})();
