@@ -864,3 +864,32 @@ console.log("Restaurant Business V20 Agentur Final geladen");
 })();
 
 if(window.gsap&&window.ScrollTrigger){gsap.utils.toArray('.event-card').forEach((c,i)=>gsap.from(c,{opacity:0,y:70,duration:1,delay:i*.08,scrollTrigger:{trigger:c,start:'top 85%'}}));}
+// Phase 5 Kontakt, Trust & FAQ
+(function(){
+  const status = document.getElementById("openStatusPhase");
+  if (status) {
+    const now = new Date();
+    const day = now.getDay();
+    const hour = now.getHours();
+    const isOpen = day !== 1 && hour >= 17 && hour < 23;
+
+    status.textContent = isOpen ? "Jetzt geöffnet" : "Aktuell geschlossen";
+  }
+
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.utils.toArray(".contact-info-card, .social-tile, .faq-list-phase details").forEach((el, i) => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 55, filter: "blur(10px)" },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: .85,
+          delay: (i % 3) * .07,
+          ease: "power4.out",
+          scrollTrigger: { trigger: el, start: "top 88%" }
+        }
+      );
+    });
+  }
+})();
