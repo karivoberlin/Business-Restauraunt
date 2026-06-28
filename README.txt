@@ -1,15 +1,14 @@
-# Restaurant Business V18 – Reservierung 2.0
+# Restaurant Business V19 – Luxury Restaurant Experience
 
 Neu:
-- neue Unterseite reservation.html
-- Reservierungs-Hero
-- Schnellwahl für Dinner, Familie, Gruppe, Event/Catering
-- Personenzähler
-- Uhrzeiten
-- Anlass-Auswahl
-- Bereichsauswahl: Innen, Terrasse, Ruhig, Event
-- automatische Zusammenfassung
-- Event-/Gruppenerkennung
-- Formspree vorbereitet
+- Luxury Ambient Layer
+- warme Lichtanimationen
+- Cinematic Hero Shimmer
+- neue Luxury Experience Sektion
+- große Food-/Restaurant-Bildkarten mit Zoom
+- animierte Kennzahlen
+- edlere Trennlinien zwischen Sektionen
+- Fine-Dining-Feeling auf Unterseiten
+- mehr Agentur-Look ohne neue komplizierte Funktionen
 
 Alle Dateien hochladen/ersetzen.

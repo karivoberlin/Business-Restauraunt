@@ -2128,3 +2128,216 @@ nav a,
     padding:24px;
   }
 }
+
+/* Business V19 – Luxury Restaurant Experience */
+:root{
+  --luxury-wood:#6e4b2a;
+  --luxury-bordeaux:#8b1e1e;
+  --luxury-cream:#fff3dd;
+  --luxury-shadow:0 48px 140px rgba(0,0,0,.62);
+}
+
+.luxury-ambient-layer{
+  position:fixed;
+  inset:0;
+  z-index:-6;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(212,162,79,.20), transparent 30%),
+    radial-gradient(circle at 82% 18%, rgba(139,30,30,.16), transparent 26%),
+    radial-gradient(circle at 50% 92%, rgba(110,75,42,.18), transparent 34%);
+  animation:luxuryAmbientShift 14s ease-in-out infinite alternate;
+}
+
+@keyframes luxuryAmbientShift{
+  0%{filter:hue-rotate(0deg) brightness(1)}
+  100%{filter:hue-rotate(-7deg) brightness(1.08)}
+}
+
+.luxury-light{
+  position:fixed;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-5;
+  filter:blur(70px);
+  opacity:.45;
+  animation:luxuryLightFloat 11s ease-in-out infinite;
+}
+
+.luxury-light-one{
+  width:360px;
+  height:360px;
+  left:-120px;
+  top:18%;
+  background:rgba(212,162,79,.20);
+}
+
+.luxury-light-two{
+  width:420px;
+  height:420px;
+  right:-160px;
+  bottom:16%;
+  background:rgba(139,30,30,.16);
+  animation-delay:-5s;
+}
+
+@keyframes luxuryLightFloat{
+  50%{transform:translate3d(42px,-28px,0) scale(1.08)}
+}
+
+.hero-video-placeholder,
+.hero,
+.subpage-hero-card,
+.menu-special-card,
+.booking-preview-card,
+.luxury-card{
+  position:relative;
+}
+
+.hero-video-placeholder::after,
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(120deg, transparent 0%, rgba(255,243,221,.08) 48%, transparent 72%);
+  mix-blend-mode:screen;
+  animation:luxuryHeroShimmer 8s ease-in-out infinite;
+}
+
+@keyframes luxuryHeroShimmer{
+  0%,100%{opacity:.12;transform:translateX(-10%)}
+  50%{opacity:.32;transform:translateX(8%)}
+}
+
+.luxury-experience-section{
+  background:
+    radial-gradient(circle at 20% 22%, rgba(212,162,79,.15), transparent 34%),
+    radial-gradient(circle at 80% 80%, rgba(139,30,30,.13), transparent 30%);
+}
+
+.luxury-experience-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.luxury-experience-card{
+  border:1px solid var(--line);
+  border-radius:38px;
+  overflow:hidden;
+  background:linear-gradient(145deg,rgba(255,243,221,.14),rgba(110,75,42,.075));
+  box-shadow:var(--luxury-shadow);
+  backdrop-filter:blur(24px);
+}
+
+.luxury-card-image{
+  min-height:230px;
+  background:
+    linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.55)),
+    var(--img) center/cover;
+  transition:transform .8s cubic-bezier(.2,.8,.2,1), filter .8s ease;
+}
+
+.luxury-experience-card:hover .luxury-card-image{
+  transform:scale(1.08);
+  filter:brightness(1.10) saturate(1.08);
+}
+
+.luxury-img-one{--img:url("https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1200&q=85")}
+.luxury-img-two{--img:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85")}
+.luxury-img-three{--img:url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&q=85")}
+
+.luxury-experience-card div:last-child{
+  padding:28px;
+}
+
+.luxury-experience-card span{
+  color:var(--gold2);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:12px;
+}
+
+.luxury-experience-card h3{
+  margin:14px 0 10px;
+}
+
+.luxury-stats-row{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.luxury-stat{
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:24px;
+  text-align:center;
+  background:linear-gradient(145deg,rgba(255,243,221,.13),rgba(110,75,42,.07));
+  box-shadow:var(--shadow);
+}
+
+.luxury-stat strong{
+  display:block;
+  font-family:"Cinzel",serif;
+  color:var(--gold2);
+  font-size:clamp(34px,4vw,58px);
+  line-height:1;
+  margin-bottom:10px;
+}
+
+.luxury-stat span{
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:12px;
+  font-weight:900;
+}
+
+.premium-header,
+.simple-subpage-header{
+  box-shadow:0 20px 90px rgba(0,0,0,.38), inset 0 1px 0 rgba(255,243,221,.08);
+}
+
+.btn-gold,
+.header-button{
+  box-shadow:0 18px 60px rgba(212,162,79,.24);
+}
+
+.btn-gold:hover,
+.header-button:hover{
+  box-shadow:0 28px 86px rgba(212,162,79,.35);
+}
+
+.section::before{
+  content:"";
+  display:block;
+  width:min(760px,70%);
+  height:1px;
+  margin:0 auto 70px;
+  background:linear-gradient(90deg,transparent,rgba(212,162,79,.38),transparent);
+}
+
+.subpage-hero-card{
+  background:
+    linear-gradient(145deg,rgba(255,243,221,.15),rgba(110,75,42,.075)),
+    radial-gradient(circle at 50% 0%, rgba(212,162,79,.12), transparent 38%);
+}
+
+@media(max-width:1100px){
+  .luxury-experience-grid,
+  .luxury-stats-row{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:620px){
+  .section::before{
+    width:86%;
+    margin-bottom:46px;
+  }
+}

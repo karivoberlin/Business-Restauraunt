@@ -475,3 +475,64 @@ console.log("Business V12 Ultimate Agentur-Version geladen");
 
   updateBooking();
 })();
+
+// Business V19 – Luxury Restaurant Experience
+(function(){
+  const luxCounters = document.querySelectorAll("[data-lux-count]");
+
+  if (luxCounters.length) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const el = entry.target;
+        const target = parseFloat(el.dataset.luxCount);
+        let current = 0;
+        const step = target / 75;
+
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            if (target === 4.9) el.textContent = "4.9★";
+            else if (target >= 1000) el.textContent = target.toLocaleString("de-DE") + "+";
+            else if (target >= 90) el.textContent = target + "%";
+            else el.textContent = target + "+";
+            clearInterval(timer);
+          } else {
+            if (target === 4.9) el.textContent = current.toFixed(1);
+            else el.textContent = Math.floor(current).toLocaleString("de-DE");
+          }
+        }, 18);
+
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: .4 });
+
+    luxCounters.forEach(counter => counterObserver.observe(counter));
+  }
+
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.utils.toArray(".luxury-card-image, .menu-special-card, .booking-preview-card").forEach((el) => {
+      gsap.fromTo(el,
+        { scale: 1.04 },
+        {
+          scale: 1,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 88%" }
+        }
+      );
+    });
+
+    gsap.utils.toArray(".luxury-light").forEach((el, i) => {
+      gsap.to(el, {
+        x: i % 2 === 0 ? 36 : -36,
+        y: i % 2 === 0 ? -28 : 28,
+        duration: 7,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
+    });
+  }
+})();
