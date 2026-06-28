@@ -1,19 +1,16 @@
-# Restaurant Business V1 – Premium Basis
+# Restaurant Business V2 – Neues Design
 
-Diese Version nutzt Premium V10 als Ausgangsbasis.
+Diese Version basiert technisch auf Business V1, bekommt aber jetzt den ersten eigenen Business-Charakter.
 
-Ab Business V2 bauen wir darauf echte Business-Funktionen:
-- besseres Reservierungssystem
-- Online-Speisekarte mit Suche/Filtern
-- Google Reviews / Instagram Feed vorbereitet
-- Event- und Gutschein-System
-- Karrierebereich
-- Mehrsprachigkeit DE/EN
-- SEO + Schema.org
-- Conversion-Optimierung
+Neu in V2:
+- professionelleres Farbkonzept
+- weniger Luxus-Gold, mehr Business-Blau/Anthrazit
+- neuer Business-Fokus Bereich
+- Firmenkunden
+- Catering
+- mehr Anfragen / Conversion
+- Hero wirkt weniger Premium-Kopie
+- Navigation angepasst
 
-Zum Hochladen bei GitHub:
-1. ZIP entpacken
-2. index.html, style.css und script.js ins Repository ziehen
-3. committen
-4. GitHub Pages / Vercel aktualisieren lassen
+Nächster Schritt:
+Business V3 = Catering, Firmenkunden und Event-Anfragen stärker ausbauen.
