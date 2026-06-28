@@ -894,10 +894,8 @@ if(window.gsap&&window.ScrollTrigger){gsap.utils.toArray('.event-card').forEach(
   }
 })();
 
-// Phase 6 Final Polish
+// Phase 6 Final Polish – fixed
 (function(){
-  document.documentElement.classList.add("js-ready");
-
   if (window.gsap && window.ScrollTrigger) {
     gsap.utils.toArray(".chef-card, .award-item").forEach((el, i) => {
       gsap.fromTo(el,

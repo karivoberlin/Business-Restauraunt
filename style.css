@@ -4273,7 +4273,7 @@ nav a,
   }
 }
 
-/* Phase 6 – Final SEO, Performance & Polish */
+/* Phase 6 FIX – Final Polish ohne kaputte Klassennamen */
 html{
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
@@ -4363,12 +4363,6 @@ video{
   letter-spacing:.12em;
   font-size:12px;
   font-weight:900;
-}
-
-.phase-footer{
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.54)),
-    radial-gradient(circle at 20% 0%, rgba(212,162,79,.08), transparent 34%);
 }
 
 a:focus-visible,
