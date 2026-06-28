@@ -539,3 +539,85 @@ console.log("Business V12 Ultimate Agentur-Version geladen");
 
 // Business V20 – Final Check
 console.log("Restaurant Business V20 Agentur Final geladen");
+
+// V21 – deutlich sichtbare Wow-Animationen
+(function(){
+  const spotlight = document.getElementById("wowSpotlight");
+
+  window.addEventListener("mousemove", (event) => {
+    if (spotlight) {
+      spotlight.style.left = event.clientX + "px";
+      spotlight.style.top = event.clientY + "px";
+    }
+
+    document.querySelectorAll(".shine-card").forEach(card => {
+      const rect = card.getBoundingClientRect();
+      const x = ((event.clientX - rect.left) / rect.width) * 100;
+      const y = ((event.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty("--mx", x + "%");
+      card.style.setProperty("--my", y + "%");
+    });
+  });
+
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(".brand",
+      {opacity:0, y:-18},
+      {opacity:1, y:0, duration:.8, ease:"power3.out"}
+    );
+
+    gsap.fromTo(".premium-nav a, .main-nav a",
+      {opacity:0, y:-16},
+      {opacity:1, y:0, duration:.65, stagger:.055, ease:"power3.out", delay:.15}
+    );
+
+    gsap.utils.toArray("h1, h2").forEach((el) => {
+      gsap.fromTo(el,
+        {opacity:0, y:50, scale:.96, filter:"blur(12px)"},
+        {
+          opacity:1,
+          y:0,
+          scale:1,
+          filter:"blur(0px)",
+          duration:1,
+          ease:"power4.out",
+          scrollTrigger:{trigger:el,start:"top 86%"}
+        }
+      );
+    });
+
+    gsap.utils.toArray(".cinematic-card, .luxury-experience-card, .agentur-final-card, .motion-card, .subpage-feature-card").forEach((el, i) => {
+      gsap.fromTo(el,
+        {opacity:0, y:70, rotateX:10, scale:.94},
+        {
+          opacity:1,
+          y:0,
+          rotateX:0,
+          scale:1,
+          duration:.95,
+          delay:(i%3)*.08,
+          ease:"power3.out",
+          scrollTrigger:{trigger:el,start:"top 88%"}
+        }
+      );
+    });
+
+    gsap.utils.toArray(".cinematic-image, .luxury-card-image, .menu-special-card, .booking-preview-card").forEach((el) => {
+      gsap.to(el, {
+        yPercent:-8,
+        scale:1.05,
+        ease:"none",
+        scrollTrigger:{
+          trigger:el,
+          start:"top bottom",
+          end:"bottom top",
+          scrub:true
+        }
+      });
+    });
+
+    gsap.to(".wow-orb-one", {x:90, y:-45, scale:1.22, duration:8, repeat:-1, yoyo:true, ease:"sine.inOut"});
+    gsap.to(".wow-orb-two", {x:-85, y:55, scale:1.16, duration:9, repeat:-1, yoyo:true, ease:"sine.inOut"});
+  }
+})();

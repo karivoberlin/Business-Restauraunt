@@ -2424,3 +2424,204 @@ nav a,
     align-items:flex-start;
   }
 }
+
+/* V21 – deutlich sichtbares Wow-Animation-Upgrade */
+.wow-orb-layer{
+  position:fixed;
+  inset:0;
+  z-index:-9;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(212,162,79,.16), transparent 28%),
+    radial-gradient(circle at 78% 12%, rgba(139,30,30,.14), transparent 25%),
+    radial-gradient(circle at 50% 90%, rgba(110,75,42,.18), transparent 34%);
+  animation:wowBgBreath 9s ease-in-out infinite alternate;
+}
+
+@keyframes wowBgBreath{
+  from{filter:brightness(1) saturate(1)}
+  to{filter:brightness(1.18) saturate(1.18)}
+}
+
+.wow-orb{
+  position:fixed;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-8;
+  filter:blur(80px);
+  opacity:.5;
+  animation:wowOrbMove 10s ease-in-out infinite;
+}
+
+.wow-orb-one{
+  top:12%;
+  left:-120px;
+  background:rgba(212,162,79,.26);
+}
+
+.wow-orb-two{
+  right:-140px;
+  bottom:12%;
+  background:rgba(139,30,30,.22);
+  animation-delay:-5s;
+}
+
+@keyframes wowOrbMove{
+  0%,100%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(70px,-45px,0) scale(1.16)}
+}
+
+.wow-spotlight{
+  position:fixed;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  left:-999px;
+  top:-999px;
+  pointer-events:none;
+  z-index:2;
+  background:radial-gradient(circle, rgba(242,214,155,.16), transparent 62%);
+  mix-blend-mode:screen;
+  transform:translate(-50%,-50%);
+  opacity:.65;
+}
+
+.hero,
+.hero-premium,
+.hero-video-placeholder{
+  overflow:hidden;
+}
+
+.hero::before,
+.hero-premium::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  pointer-events:none;
+  background:
+    linear-gradient(115deg, transparent 20%, rgba(242,214,155,.10) 46%, transparent 70%);
+  transform:translateX(-60%) rotate(8deg);
+  animation:wowHeroBeam 7s ease-in-out infinite;
+  z-index:2;
+}
+
+@keyframes wowHeroBeam{
+  0%,100%{transform:translateX(-65%) rotate(8deg);opacity:.05}
+  50%{transform:translateX(55%) rotate(8deg);opacity:.34}
+}
+
+.cinematic-showcase-section{
+  background:
+    radial-gradient(circle at 20% 22%, rgba(212,162,79,.16), transparent 32%),
+    radial-gradient(circle at 80% 76%, rgba(139,30,30,.14), transparent 30%);
+}
+
+.cinematic-showcase-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.cinematic-card{
+  border:1px solid var(--line);
+  border-radius:42px;
+  overflow:hidden;
+  background:linear-gradient(145deg,rgba(255,243,221,.15),rgba(110,75,42,.075));
+  box-shadow:0 44px 130px rgba(0,0,0,.55);
+  transform-style:preserve-3d;
+}
+
+.cinematic-image{
+  min-height:280px;
+  background:
+    linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.58)),
+    var(--img) center/cover;
+  transition:transform .9s cubic-bezier(.2,.8,.2,1), filter .9s ease;
+}
+
+.cinematic-card:hover .cinematic-image{
+  transform:scale(1.12);
+  filter:brightness(1.14) saturate(1.12);
+}
+
+.cinematic-food{--img:url("https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1400&q=85")}
+.cinematic-room{--img:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85")}
+.cinematic-wine{--img:url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1400&q=85")}
+
+.cinematic-content{
+  padding:30px;
+}
+
+.cinematic-content span{
+  color:var(--gold2);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:12px;
+  font-weight:900;
+}
+
+.cinematic-content h3{
+  margin:14px 0 10px;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(60px) scale(.96);
+  filter:blur(14px);
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  filter:blur(0);
+}
+
+.shine-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(242,214,155,.20), transparent 34%);
+  opacity:0;
+  transition:opacity .25s ease;
+}
+
+.shine-card:hover::before{
+  opacity:1;
+}
+
+.btn,
+.header-button{
+  position:relative;
+  overflow:hidden;
+}
+
+.btn::before,
+.header-button::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+  transform:translateX(-130%);
+  transition:.65s ease;
+}
+
+.btn:hover::before,
+.header-button:hover::before{
+  transform:translateX(130%);
+}
+
+@media(max-width:1100px){
+  .cinematic-showcase-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:700px){
+  .wow-spotlight{
+    display:none;
+  }
+}
