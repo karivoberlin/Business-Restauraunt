@@ -240,3 +240,14 @@ document.querySelectorAll(".btn-gold").forEach((button) => {
 
 // Business V12: Final Status
 console.log("Business V12 Ultimate Agentur-Version geladen");
+
+// Business V15 – Animation Upgrade
+(function(){
+  const progress=document.getElementById("businessScrollProgress");
+  const transition=document.getElementById("businessPageTransition");
+  window.addEventListener("scroll",()=>{if(!progress)return;const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=max>0?(window.scrollY/max*100)+"%":"0%"});
+  document.querySelectorAll("a").forEach(link=>{const href=link.getAttribute("href")||"";if(href.endsWith(".html")&&transition){link.addEventListener("click",()=>{transition.classList.remove("active");void transition.offsetWidth;transition.classList.add("active")})}});
+  if(window.Lenis){const lenis=new Lenis({smoothWheel:true,duration:1.15});function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf)}
+  if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray(".reveal").forEach(el=>{gsap.fromTo(el,{opacity:0,y:38,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 86%"}})})}
+  document.querySelectorAll(".tilt-card").forEach(card=>{card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const ry=(x/r.width-.5)*8,rx=(y/r.height-.5)*-8;card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`});card.addEventListener("mouseleave",()=>card.style.transform="")});
+})();

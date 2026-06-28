@@ -1,15 +1,5 @@
-# Restaurant Business V14 – Unterseiten optimiert
+Business V15 – Animation & Unterseiten
 
-Änderung:
-- Startseite entschlackt
-- Jobs auf eigene Unterseite ausgelagert: jobs.html
-- SEO/Performance auf eigene Unterseite ausgelagert: seo.html
-- Navigation auf Startseite reduziert
-- Nur die wichtigsten Punkte auf der Startseite:
-  Start, Speisekarte, Catering, Bewertungen, Reservierung, Kontakt
-- Zusätzliche Links zu Jobs und SEO bleiben erreichbar
-- Navigation oben hat mehr Abstand und ist weniger gequetscht
+Neu: GSAP, Lenis, Page Transition, Scroll Progress, 3D Cards, Unterseiten menu/catering/events/contact plus bestehende jobs/seo.
 
-Wichtig:
-Bei GitHub alle Dateien hochladen:
-index.html, jobs.html, seo.html, style.css, script.js, README.txt
+Alle Dateien hochladen.

@@ -1413,3 +1413,19 @@ nav a,
     justify-content:flex-start;
   }
 }
+
+/* Business V15 – Animation & Unterseiten Upgrade */
+.business-scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:999;box-shadow:0 0 22px rgba(212,162,79,.55)}
+.business-page-transition{position:fixed;inset:0;background:linear-gradient(135deg,#070504,#1a120c,#070504);z-index:998;transform:translateY(100%);pointer-events:none}
+.business-page-transition.active{animation:businessPageSweep .75s cubic-bezier(.77,0,.18,1)}
+@keyframes businessPageSweep{0%{transform:translateY(100%)}50%{transform:translateY(0)}100%{transform:translateY(-100%)}}
+.motion-grid,.subpage-card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.motion-card,.subpage-feature-card,.subpage-hero-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,246,230,.13),rgba(110,75,42,.065));backdrop-filter:blur(24px);box-shadow:var(--shadow);border-radius:36px;padding:32px}
+.motion-card span,.subpage-feature-card span{display:block;font-family:"Cinzel",serif;color:var(--gold2);font-size:36px;margin-bottom:18px}
+.motion-card h3,.subpage-feature-card h3{margin-bottom:10px}
+.shine-card{position:relative;overflow:hidden}.shine-card::after{content:"";position:absolute;inset:-120%;background:linear-gradient(115deg,transparent 35%,rgba(242,214,155,.18),transparent 65%);transform:translateX(-38%) rotate(8deg);transition:.8s ease;pointer-events:none}.shine-card:hover::after{transform:translateX(38%) rotate(8deg)}
+.tilt-card{transform-style:preserve-3d;transition:transform .18s ease,border-color .25s ease}.tilt-card:hover{border-color:rgba(212,162,79,.45)}
+.subpage-main{padding-top:130px}.subpage-hero-section{padding-bottom:50px}.subpage-hero-card{text-align:center}
+.subpage-title{font-family:"Cinzel",serif;font-size:clamp(52px,8vw,116px);line-height:.95;letter-spacing:-.04em;margin-bottom:22px}
+.premium-nav{gap:clamp(14px,1.1vw,24px)!important;flex-wrap:wrap;row-gap:10px}.premium-header{height:auto!important;min-height:82px;padding-top:14px!important;padding-bottom:14px!important}
+@media(max-width:1100px){.motion-grid,.subpage-card-grid{grid-template-columns:1fr}}

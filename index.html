@@ -52,6 +52,8 @@
 </head>
 
 <body>
+  <div class="business-page-transition" id="businessPageTransition"></div>
+  <div class="business-scroll-progress" id="businessScrollProgress"></div>
   <div class="page-transition" id="pageTransition"></div>
 
   <div class="loader" id="loader">
@@ -79,14 +81,12 @@
     </a>
 
     <nav class="premium-nav" id="premiumNav">
-      <a href="#start">Start</a>
-      <a href="#menu">Speisekarte</a>
-      <a href="#catering">Catering</a>
-      <a href="#trust">Bewertungen</a>
-      <a href="#reservation">Reservierung</a>
-      <a href="#contact">Kontakt</a>
+      <a href="index.html#start">Start</a>
+      <a href="menu.html">Speisekarte</a>
+      <a href="catering.html">Catering</a>
+      <a href="events.html">Events</a>
       <a href="jobs.html">Jobs</a>
-      <a href="seo.html">SEO</a>
+      <a href="contact.html">Kontakt</a>
     </nav>
 
     <a href="#reservation" class="header-button" data-i18n="navReserve">Tisch reservieren</a>
@@ -312,6 +312,22 @@
       </div>
     </section>
 
+
+
+    <section class="section business-motion-section" id="motion">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="overline">Business Motion</p>
+          <h2>Mehr Bewegung, mehr Wertigkeit, weniger überladen.</h2>
+          <p>Business V15 bringt die Website näher an eine moderne Agentur-Seite: Smooth Scroll, 3D-Hover, Scroll-Reveals und bessere Seitenstruktur.</p>
+        </div>
+        <div class="motion-grid">
+          <article class="motion-card reveal tilt-card shine-card"><span>01</span><h3>Smooth Scroll</h3><p>Die Seite fühlt sich hochwertiger und ruhiger an.</p></article>
+          <article class="motion-card reveal tilt-card shine-card"><span>02</span><h3>Scroll Reveal</h3><p>Inhalte erscheinen eleganter beim Scrollen.</p></article>
+          <article class="motion-card reveal tilt-card shine-card"><span>03</span><h3>3D Cards</h3><p>Karten reagieren hochwertig auf Mausbewegung.</p></article>
+        </div>
+      </div>
+    </section>
 
     <section class="section homepage-focus-section" id="homepage-focus">
       <div class="container">
@@ -895,6 +911,9 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
