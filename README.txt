@@ -1,13 +1,15 @@
-# Restaurant Business V17 – Speisekarte 2.0
+# Restaurant Business V18 – Reservierung 2.0
 
 Neu:
-- komplett neue menu.html
-- digitale Speisekarte mit Suche
-- Kategorien
-- Filter: Bestseller, Vegetarisch, Vegan, Glutenfrei
-- Allergene
-- Tagesangebote
-- hochwertige Gericht-Karten
-- Speisekarte wirkt deutlich mehr wie Business-Paket
+- neue Unterseite reservation.html
+- Reservierungs-Hero
+- Schnellwahl für Dinner, Familie, Gruppe, Event/Catering
+- Personenzähler
+- Uhrzeiten
+- Anlass-Auswahl
+- Bereichsauswahl: Innen, Terrasse, Ruhig, Event
+- automatische Zusammenfassung
+- Event-/Gruppenerkennung
+- Formspree vorbereitet
 
 Alle Dateien hochladen/ersetzen.

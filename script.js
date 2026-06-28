@@ -405,3 +405,73 @@ console.log("Business V12 Ultimate Agentur-Version geladen");
 
   renderProMenu();
 })();
+
+// Business V18 – Reservierung 2.0
+(function(){
+  const guests = document.getElementById("bookingGuestsV18");
+  if (!guests) return;
+
+  const minus = document.getElementById("bookingMinusV18");
+  const plus = document.getElementById("bookingPlusV18");
+  const time = document.getElementById("bookingTimeV18");
+  const occasion = document.getElementById("bookingOccasionV18");
+  const note = document.getElementById("bookingNoteV18");
+  const summary = document.getElementById("bookingSummaryV18");
+  const presets = document.querySelectorAll(".booking-preset-v18");
+  const form = document.getElementById("bookingFormV18");
+  const formNote = document.getElementById("bookingFormNoteV18");
+
+  function updateBooking(){
+    const persons = Number(guests.value || 1);
+    const selectedTime = time && time.value ? time.value : "Uhrzeit noch wählen";
+    const selectedOccasion = occasion && occasion.value ? occasion.value : "Anlass noch wählen";
+
+    if (persons >= 20) {
+      note.textContent = "Event-Anfrage erkannt – ideal für Catering oder geschlossene Gesellschaft";
+    } else if (persons >= 10) {
+      note.textContent = "Große Gruppe erkannt – Restaurant kann besser planen";
+    } else if (persons >= 6) {
+      note.textContent = "Gruppenreservierung erkannt";
+    } else {
+      note.textContent = "Normale Tischreservierung";
+    }
+
+    if (summary) {
+      summary.querySelector("span").textContent = `${persons} Personen · ${selectedTime} · ${selectedOccasion}`;
+    }
+  }
+
+  if (minus) minus.addEventListener("click", () => {
+    guests.value = Math.max(1, Number(guests.value) - 1);
+    updateBooking();
+  });
+
+  if (plus) plus.addEventListener("click", () => {
+    guests.value = Math.min(120, Number(guests.value) + 1);
+    updateBooking();
+  });
+
+  guests.addEventListener("input", updateBooking);
+  if (time) time.addEventListener("change", updateBooking);
+  if (occasion) occasion.addEventListener("change", updateBooking);
+
+  presets.forEach(button => {
+    button.addEventListener("click", () => {
+      presets.forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
+      guests.value = button.dataset.persons;
+      if (time) time.value = button.dataset.time;
+      if (occasion) occasion.value = button.dataset.occasion;
+      updateBooking();
+    });
+  });
+
+  if (form) {
+    form.addEventListener("submit", () => {
+      formNote.textContent = "Reservierungsanfrage wird gesendet ...";
+      formNote.classList.add("success");
+    });
+  }
+
+  updateBooking();
+})();
