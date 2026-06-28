@@ -2625,3 +2625,42 @@ nav a,
     display:none;
   }
 }
+
+/* Business Master Template – kundenfertige Restaurant-Inhalte */
+.restaurant-story-section{
+  background:
+    radial-gradient(circle at 18% 24%, rgba(212,162,79,.14), transparent 32%),
+    radial-gradient(circle at 82% 78%, rgba(139,30,30,.10), transparent 30%);
+}
+
+.story-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:38px;
+  align-items:center;
+}
+
+.story-image{
+  min-height:560px;
+  border-radius:42px;
+  border:1px solid var(--line);
+  background:
+    linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.58)),
+    url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1400&q=85") center/cover;
+  box-shadow:var(--shadow);
+}
+
+.story-copy p{
+  margin-bottom:18px;
+}
+
+.cinematic-showcase-section .section-heading h2::after,
+.luxury-experience-section .section-heading h2::after,
+.agentur-final-section .section-heading h2::after{
+  content:"";
+}
+
+@media(max-width:1100px){
+  .story-grid{grid-template-columns:1fr}
+  .story-image{min-height:390px}
+}
