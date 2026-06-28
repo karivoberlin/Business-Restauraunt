@@ -251,3 +251,56 @@ console.log("Business V12 Ultimate Agentur-Version geladen");
   if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);gsap.utils.toArray(".reveal").forEach(el=>{gsap.fromTo(el,{opacity:0,y:38,filter:"blur(8px)"},{opacity:1,y:0,filter:"blur(0px)",duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 86%"}})})}
   document.querySelectorAll(".tilt-card").forEach(card=>{card.addEventListener("mousemove",e=>{const r=card.getBoundingClientRect();const x=e.clientX-r.left,y=e.clientY-r.top;const ry=(x/r.width-.5)*8,rx=(y/r.height-.5)*-8;card.style.transform=`perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`});card.addEventListener("mouseleave",()=>card.style.transform="")});
 })();
+
+// Business V16 – Premium Motion Upgrade
+(function(){
+  const cursor = document.getElementById("businessCursorDot");
+
+  if (cursor) {
+    window.addEventListener("mousemove", (event) => {
+      cursor.style.left = event.clientX + "px";
+      cursor.style.top = event.clientY + "px";
+    });
+  }
+
+  document.querySelectorAll(".btn, .header-button").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const rect = button.getBoundingClientRect();
+      button.style.setProperty("--ripple-x", (event.clientX - rect.left) + "px");
+      button.style.setProperty("--ripple-y", (event.clientY - rect.top) + "px");
+      button.classList.remove("rippling");
+      void button.offsetWidth;
+      button.classList.add("rippling");
+      setTimeout(() => button.classList.remove("rippling"), 700);
+    });
+  });
+
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.utils.toArray("h1, h2").forEach((headline) => {
+      gsap.fromTo(headline,
+        { opacity: 0, y: 28, letterSpacing: "-0.08em" },
+        {
+          opacity: 1,
+          y: 0,
+          letterSpacing: "-0.04em",
+          duration: .9,
+          ease: "power3.out",
+          scrollTrigger: { trigger: headline, start: "top 88%" }
+        }
+      );
+    });
+
+    gsap.utils.toArray(".hero-video-placeholder, .subpage-image").forEach((image) => {
+      gsap.to(image, {
+        yPercent: -6,
+        ease: "none",
+        scrollTrigger: {
+          trigger: image,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+  }
+})();

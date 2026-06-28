@@ -1,5 +1,12 @@
-Business V15 – Animation & Unterseiten
+# Restaurant Business V16 – Premium Motion Upgrade
 
-Neu: GSAP, Lenis, Page Transition, Scroll Progress, 3D Cards, Unterseiten menu/catering/events/contact plus bestehende jobs/seo.
+Neu:
+- hochwertigere Scroll-Animationen
+- Text-Reveal Feeling mit GSAP
+- dezenter Cursor-Punkt ohne großen Glow-Kreis
+- Button-Ripple
+- stärkere 3D Cards
+- sanfte Bild-/Hero-Parallax
+- neue V16 Motion Showcase Sektion
 
-Alle Dateien hochladen.
+Alle Dateien hochladen/ersetzen.
