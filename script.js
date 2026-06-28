@@ -635,3 +635,71 @@ console.log("Restaurant Business V20 Agentur Final geladen");
     });
   }
 })();
+
+// Phase 1 Homepage Complete
+(function(){
+  const header = document.getElementById("siteHeader");
+  const nav = document.getElementById("mainNav");
+  const toggle = document.getElementById("menuToggle");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const closeLightbox = document.getElementById("closeLightbox");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => nav.classList.toggle("open"));
+  }
+
+  if (header) {
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 70);
+    });
+  }
+
+  document.querySelectorAll(".phase-gallery-item").forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!lightbox || !lightboxImage) return;
+      lightboxImage.src = button.dataset.img;
+      lightbox.classList.add("active");
+    });
+  });
+
+  if (closeLightbox && lightbox) {
+    closeLightbox.addEventListener("click", () => lightbox.classList.remove("active"));
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.classList.remove("active");
+    });
+  }
+
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(".phase-hero-title span",
+      { opacity: 0, y: 80, filter: "blur(14px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: 1.05, stagger: .14, ease: "power4.out", delay: .25 }
+    );
+
+    gsap.fromTo(".phase-hero-subtitle, .phase-hero-text, .phase-hero-actions",
+      { opacity: 0, y: 38, filter: "blur(10px)" },
+      { opacity: 1, y: 0, filter: "blur(0px)", duration: .95, stagger: .12, ease: "power4.out", delay: .55 }
+    );
+
+    gsap.fromTo(".phase-hero-card",
+      { opacity: 0, y: 60, rotateX: 8, filter: "blur(12px)" },
+      { opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)", duration: 1.05, ease: "power4.out", delay: .65 }
+    );
+
+    gsap.utils.toArray(".phase-main-image, .phase-dish-image, .phase-gallery-item").forEach((el) => {
+      gsap.to(el, {
+        yPercent: -7,
+        scale: 1.04,
+        ease: "none",
+        scrollTrigger: {
+          trigger: el,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true
+        }
+      });
+    });
+  }
+})();
