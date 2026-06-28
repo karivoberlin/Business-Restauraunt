@@ -893,17 +893,3 @@ if(window.gsap&&window.ScrollTrigger){gsap.utils.toArray('.event-card').forEach(
     });
   }
 })();
-
-// Phase 6 Final Polish – fixed
-(function(){
-  if (window.gsap && window.ScrollTrigger) {
-    gsap.utils.toArray(".chef-card, .award-item").forEach((el, i) => {
-      gsap.fromTo(el,
-        { opacity: 0, y: 60, filter: "blur(10px)" },
-        { opacity: 1, y: 0, filter: "blur(0px)", duration: .9, delay: (i % 3) * .08, ease: "power4.out",
-          scrollTrigger: { trigger: el, start: "top 88%" }
-        }
-      );
-    });
-  }
-})();
