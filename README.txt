@@ -1,12 +1,18 @@
-# Restaurant Business V8 – Mehrsprachigkeit DE/EN
+# Restaurant Business V9 – SEO & Performance
 
-Neu in V8:
-- DE/EN Sprachumschalter
-- wichtige Hero-/CTA-Texte übersetzbar
-- Mehrsprachigkeits-Sektion
-- Vorschau für Deutsch/Englisch
-- Speicherung der Sprache im Browser
-- besonders gut für Touristen, Hotels, Städte und internationale Gäste
+Neu in V9:
+- SEO-Sektion
+- Schema.org Restaurant JSON-LD
+- Robots Meta
+- Canonical Link
+- Theme Color
+- Local SEO Struktur
+- Performance-Hinweise
+- SEO Score Dashboard
+- SEO Cards für lokale Suche, Ladezeit und Suchmaschinen
+
+Wichtig:
+Im echten Kundenprojekt müssen Domain, Adresse, Telefonnummer, Bilder und Social Links ersetzt werden.
 
 Nächster Schritt:
-Business V9 = SEO + Schema.org + Performance-Optimierung.
+Business V10 = Admin-freundliche Struktur + Content-Variablen.
