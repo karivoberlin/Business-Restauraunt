@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Restaurant Business V4 | Online Speisekarte</title>
+  <title>Restaurant Business V5 | Reservierungssystem</title>
   <meta name="description" content="Restaurant Business V1 Ultimate Edition: finales Master Template mit Premium Design, Luxus Extras, Reservierung, Galerie, Bewertungen, Events, Gutscheinen und High-End Animationen." />
   <meta name="author" content="Karivo" />
   <meta property="og:title" content="Restaurant Name | Premium Restaurant Website Ultimate" />
@@ -81,10 +81,10 @@
 
       <div class="container hero-inner">
         <div class="hero-left reveal">
-          <p class="overline">Business V4 · Online Speisekarte</p>
-          <h1>Professionell, modern und jetzt mit einer stärkeren Online-Speisekarte.</h1>
+          <p class="overline">Business V5 · Reservierungssystem</p>
+          <h1>Professionell, modern und jetzt mit einem stärkeren Reservierungssystem.</h1>
           <p class="hero-text">
-            Business V4 erweitert die Website mit einer Business-Speisekarte: Suche, Filter, Bestseller, Allergene, Preise und klarer Reservierungs-CTA.
+            Business V5 verbessert den wichtigsten Conversion-Bereich: Reservierung mit Zeitfenstern, Anlass-Auswahl, Gästeanzahl-Logik, Schnellwahl und klarer Bestätigungsanzeige.
           </p>
 
           <div class="hero-actions">
@@ -517,43 +517,122 @@
       </div>
     </section>
 
+    
     <section class="section reservation-section" id="reservation">
-      <div class="container reservation-premium-grid">
-        <div class="reservation-copy reveal">
-          <p class="overline">Reservierung</p>
-          <h2>Reservieren Sie Ihren besonderen Abend.</h2>
-          <p>Das Formular ist für Formspree vorbereitet. Ersetze später nur den Link im action-Attribut.</p>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="overline">Business Reservierung</p>
+          <h2>Reservierungssystem mit klarer Anfrage-Logik.</h2>
+          <p>Business V5 macht aus dem einfachen Formular einen stärkeren Conversion-Bereich mit Zeitfenstern, Anlass, Gästeanzahl und Schnellwahl.</p>
+        </div>
 
-          <div class="reservation-benefits">
-            <div class="shine-card"><span>✨</span><strong>Premium Anfrage</strong><p>Hochwertiges Formular mit Floating Labels.</p></div>
-            <div class="shine-card"><span>📩</span><strong>Formspree bereit</strong><p>Anfragen kommen direkt per E-Mail an.</p></div>
-            <div class="shine-card"><span>📱</span><strong>Mobile optimiert</strong><p>Perfekt auf Smartphone, Tablet und Desktop.</p></div>
+        <div class="reservation-funnel reveal">
+          <div class="funnel-step active">
+            <strong>1</strong>
+            <span>Details wählen</span>
+          </div>
+          <div class="funnel-line"></div>
+          <div class="funnel-step">
+            <strong>2</strong>
+            <span>Kontakt eintragen</span>
+          </div>
+          <div class="funnel-line"></div>
+          <div class="funnel-step">
+            <strong>3</strong>
+            <span>Anfrage senden</span>
           </div>
         </div>
 
-        <form class="premium-form reveal shine-card" id="reservationForm" action="https://formspree.io/f/DEIN-FORMSPREE-LINK" method="POST">
-          <div class="form-row">
-            <label><input type="text" name="name" placeholder=" " required><span>Name</span></label>
-            <label><input type="tel" name="telefon" placeholder=" " required><span>Telefon</span></label>
-          </div>
+        <div class="business-reservation-grid">
+          <aside class="reservation-sidebar reveal shine-card">
+            <p class="overline">Schnellwahl</p>
+            <h3>Beliebte Anfragen</h3>
 
-          <div class="form-row">
-            <label><input type="email" name="email" placeholder=" " required><span>E-Mail</span></label>
-            <label><input type="number" name="personen" min="1" placeholder=" " required><span>Personen</span></label>
-          </div>
+            <button class="reservation-preset active" data-persons="2" data-time="19:00" data-occasion="Dinner">
+              <span>🍽️ Dinner zu zweit</span>
+              <strong>2 Personen · 19:00</strong>
+            </button>
 
-          <div class="form-row">
-            <label><input type="date" name="datum" required><span>Datum</span></label>
-            <label><input type="time" name="uhrzeit" required><span>Uhrzeit</span></label>
-          </div>
+            <button class="reservation-preset" data-persons="4" data-time="20:00" data-occasion="Freunde / Familie">
+              <span>👨‍👩‍👧‍👦 Freunde & Familie</span>
+              <strong>4 Personen · 20:00</strong>
+            </button>
 
-          <label class="full-label"><textarea name="nachricht" placeholder=" "></textarea><span>Nachricht</span></label>
+            <button class="reservation-preset" data-persons="10" data-time="18:30" data-occasion="Gruppe / Firma">
+              <span>🏢 Gruppe / Firma</span>
+              <strong>10 Personen · 18:30</strong>
+            </button>
 
-          <button class="btn btn-gold magnetic" type="submit">Tisch reservieren</button>
-          <p class="form-note" id="formNote">Demo-Hinweis: Für echte Anfragen Formspree-Link ersetzen.</p>
-        </form>
+            <div class="reservation-hint">
+              <strong>Business Vorteil</strong>
+              <p>Restaurants bekommen strukturiertere Reservierungsanfragen und können große Gruppen besser erkennen.</p>
+            </div>
+          </aside>
+
+          <form class="premium-form business-reservation-form reveal shine-card" id="reservationForm" action="https://formspree.io/f/DEIN-FORMSPREE-LINK" method="POST">
+            <div class="form-row">
+              <label><input type="text" name="name" placeholder=" " required><span>Name</span></label>
+              <label><input type="tel" name="telefon" placeholder=" " required><span>Telefon</span></label>
+            </div>
+
+            <div class="form-row">
+              <label><input type="email" name="email" placeholder=" " required><span>E-Mail</span></label>
+              <label>
+                <select name="anlass" id="reservationOccasion" required>
+                  <option value="">Anlass wählen</option>
+                  <option>Dinner</option>
+                  <option>Geburtstag</option>
+                  <option>Jahrestag</option>
+                  <option>Business Lunch</option>
+                  <option>Gruppe / Firma</option>
+                  <option>Freunde / Familie</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label><input type="date" name="datum" id="reservationDate" required><span>Datum</span></label>
+              <label>
+                <select name="uhrzeit" id="reservationTime" required>
+                  <option value="">Uhrzeit wählen</option>
+                  <option>12:00</option>
+                  <option>12:30</option>
+                  <option>13:00</option>
+                  <option>18:00</option>
+                  <option>18:30</option>
+                  <option>19:00</option>
+                  <option>19:30</option>
+                  <option>20:00</option>
+                  <option>20:30</option>
+                  <option>21:00</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="guest-selector">
+              <p class="guest-label">Personenanzahl</p>
+              <div class="guest-controls">
+                <button type="button" id="guestMinus">−</button>
+                <input type="number" name="personen" id="guestCount" min="1" max="100" value="2" required>
+                <button type="button" id="guestPlus">+</button>
+              </div>
+              <p class="guest-note" id="guestNote">Normale Tischreservierung</p>
+            </div>
+
+            <label class="full-label"><textarea name="nachricht" placeholder=" "></textarea><span>Besondere Wünsche</span></label>
+
+            <div class="reservation-summary" id="reservationSummary">
+              <strong>Zusammenfassung</strong>
+              <span>2 Personen · Uhrzeit noch wählen · Anlass noch wählen</span>
+            </div>
+
+            <button class="btn btn-gold magnetic" type="submit">Reservierungsanfrage senden</button>
+            <p class="form-note" id="formNote">Demo-Hinweis: Für echte Anfragen Formspree-Link ersetzen.</p>
+          </form>
+        </div>
       </div>
     </section>
+
 
     <section class="section contact-map-section" id="contact">
       <div class="container contact-map-grid">
@@ -610,7 +689,7 @@
     <div class="container footer-grid">
       <div>
         <strong>Restaurant Name</strong>
-        <p>Karivo Restaurant Business Vorlage — V4 Online Speisekarte.</p>
+        <p>Karivo Restaurant Business Vorlage — V5 Reservierungssystem.</p>
       </div>
 
       <div>

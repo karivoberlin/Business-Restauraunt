@@ -96,3 +96,63 @@ quickFilters.forEach(button => {
 });
 
 setTimeout(renderBusinessMenu, 300);
+
+// Business V5: Reservierungssystem
+const guestMinus = document.getElementById("guestMinus");
+const guestPlus = document.getElementById("guestPlus");
+const guestCount = document.getElementById("guestCount");
+const guestNote = document.getElementById("guestNote");
+const reservationTime = document.getElementById("reservationTime");
+const reservationOccasion = document.getElementById("reservationOccasion");
+const reservationSummary = document.getElementById("reservationSummary");
+const reservationPresets = document.querySelectorAll(".reservation-preset");
+
+function updateReservationSummary() {
+  if (!guestCount || !reservationSummary) return;
+
+  const persons = Number(guestCount.value || 1);
+  const time = reservationTime && reservationTime.value ? reservationTime.value : "Uhrzeit noch wählen";
+  const occasion = reservationOccasion && reservationOccasion.value ? reservationOccasion.value : "Anlass noch wählen";
+
+  if (persons >= 10) {
+    guestNote.textContent = "Große Gruppe erkannt – ideal für Business/Event-Anfrage";
+  } else if (persons >= 6) {
+    guestNote.textContent = "Gruppe erkannt – Restaurant kann besser planen";
+  } else {
+    guestNote.textContent = "Normale Tischreservierung";
+  }
+
+  reservationSummary.querySelector("span").textContent = `${persons} Personen · ${time} · ${occasion}`;
+}
+
+if (guestMinus && guestPlus && guestCount) {
+  guestMinus.addEventListener("click", () => {
+    guestCount.value = Math.max(1, Number(guestCount.value) - 1);
+    updateReservationSummary();
+  });
+
+  guestPlus.addEventListener("click", () => {
+    guestCount.value = Math.min(100, Number(guestCount.value) + 1);
+    updateReservationSummary();
+  });
+
+  guestCount.addEventListener("input", updateReservationSummary);
+}
+
+if (reservationTime) reservationTime.addEventListener("change", updateReservationSummary);
+if (reservationOccasion) reservationOccasion.addEventListener("change", updateReservationSummary);
+
+reservationPresets.forEach(button => {
+  button.addEventListener("click", () => {
+    reservationPresets.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+
+    if (guestCount) guestCount.value = button.dataset.persons;
+    if (reservationTime) reservationTime.value = button.dataset.time;
+    if (reservationOccasion) reservationOccasion.value = button.dataset.occasion;
+
+    updateReservationSummary();
+  });
+});
+
+setTimeout(updateReservationSummary, 300);

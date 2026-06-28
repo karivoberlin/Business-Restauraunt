@@ -1,12 +1,15 @@
-# Restaurant Business V4 – Online Speisekarte
+# Restaurant Business V5 – Reservierungssystem
 
-Neu in V4:
-- stärkere Online-Speisekarte
-- Suchfeld für Gerichte
-- Quick-Filter: Alle, Vegetarisch, Bestseller, Glutenfrei
-- zusätzliche Badges bei Gerichten
-- Business CTA unter der Speisekarte
-- bessere Struktur für Restaurants mit vielen Gerichten
+Neu in V5:
+- stärkeres Reservierungssystem
+- Funnel-Anzeige mit 3 Schritten
+- Schnellwahl für typische Reservierungen
+- Personenanzahl mit Plus/Minus
+- automatische Hinweise bei Gruppen
+- Anlass-Auswahl
+- Uhrzeit-Zeitfenster
+- Reservierungs-Zusammenfassung
+- klarerer Conversion-Bereich
 
 Nächster Schritt:
-Business V5 = Reservierungssystem verbessern mit Zeitfenstern, Gästeanzahl-Logik und stärkerem Conversion-Funnel.
+Business V6 = Google Reviews / Instagram / Trust stärker ausbauen.
