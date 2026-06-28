@@ -621,3 +621,17 @@ console.log("Restaurant Business V20 Agentur Final geladen");
     gsap.to(".wow-orb-two", {x:-85, y:55, scale:1.16, duration:9, repeat:-1, yoyo:true, ease:"sine.inOut"});
   }
 })();
+
+// Aurum V22 – extra polish
+(function(){
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.utils.toArray(".aurum-wine-image, .aurum-private-card").forEach((el) => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 70, scale: .96, filter: "blur(12px)" },
+        { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 1.05, ease: "power4.out",
+          scrollTrigger: { trigger: el, start: "top 84%" }
+        }
+      );
+    });
+  }
+})();

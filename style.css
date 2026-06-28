@@ -2677,3 +2677,87 @@ nav a,
   .aurum-story-grid{grid-template-columns:1fr}
   .aurum-story-image{min-height:390px}
 }
+
+/* Aurum Berlin V22 – Real Restaurant Polish */
+.aurum-wine-section{
+  background:
+    radial-gradient(circle at 18% 20%, rgba(212,162,79,.14), transparent 32%),
+    radial-gradient(circle at 88% 72%, rgba(125,23,23,.13), transparent 30%);
+}
+
+.aurum-wine-grid{
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  gap:38px;
+  align-items:center;
+}
+
+.aurum-wine-copy p{
+  margin-bottom:18px;
+}
+
+.aurum-wine-image{
+  min-height:560px;
+  border-radius:44px;
+  border:1px solid var(--line);
+  background:
+    linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.58)),
+    url("https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1500&q=85") center/cover;
+  box-shadow:var(--shadow);
+}
+
+.aurum-private-section{
+  padding-top:70px;
+  padding-bottom:130px;
+}
+
+.aurum-private-card{
+  border:1px solid var(--line);
+  border-radius:54px;
+  padding:70px;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.44),rgba(0,0,0,.72)),
+    url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1900&q=85") center/cover;
+  box-shadow:var(--shadow);
+}
+
+.aurum-private-card p{
+  max-width:720px;
+  margin:0 auto 28px;
+}
+
+.aurum-private-card h2{
+  max-width:920px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.site-header{
+  border-color:rgba(245,217,158,.18);
+}
+
+.main-nav a{
+  letter-spacing:.09em;
+}
+
+.dish-card,
+.review-card,
+.hero-card{
+  border-color:rgba(245,217,158,.18);
+}
+
+@media(max-width:1100px){
+  .aurum-wine-grid{
+    grid-template-columns:1fr;
+  }
+  .aurum-wine-image{
+    min-height:390px;
+  }
+}
+
+@media(max-width:620px){
+  .aurum-private-card{
+    padding:42px 24px;
+  }
+}
