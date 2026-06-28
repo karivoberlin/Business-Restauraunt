@@ -1,16 +1,12 @@
-# Restaurant Business V2 – Neues Design
+# Restaurant Business V3 – Catering & Events
 
-Diese Version basiert technisch auf Business V1, bekommt aber jetzt den ersten eigenen Business-Charakter.
-
-Neu in V2:
-- professionelleres Farbkonzept
-- weniger Luxus-Gold, mehr Business-Blau/Anthrazit
-- neuer Business-Fokus Bereich
-- Firmenkunden
-- Catering
-- mehr Anfragen / Conversion
-- Hero wirkt weniger Premium-Kopie
-- Navigation angepasst
+Neu in V3:
+- Catering-Bereich
+- Firmenfeiern-Bereich
+- Private Events
+- eigenes Event-Anfrageformular
+- Business-Fokus stärker als Premium
+- bessere Bereiche für größere Kundenanfragen
 
 Nächster Schritt:
-Business V3 = Catering, Firmenkunden und Event-Anfragen stärker ausbauen.
+Business V4 = Online-Speisekarte mit Suche, Filtern und Business-Layout verbessern.

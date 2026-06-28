@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Restaurant Business V2 | Neues Design</title>
+  <title>Restaurant Business V3 | Catering & Events</title>
   <meta name="description" content="Restaurant Business V1 Ultimate Edition: finales Master Template mit Premium Design, Luxus Extras, Reservierung, Galerie, Bewertungen, Events, Gutscheinen und High-End Animationen." />
   <meta name="author" content="Karivo" />
   <meta property="og:title" content="Restaurant Name | Premium Restaurant Website Ultimate" />
@@ -49,6 +49,7 @@
       <a href="#menu">Menü</a>
       <a href="#experience">System</a>
       <a href="#business">Business</a>
+      <a href="#catering">Catering</a>
       <a href="#gallery">Galerie</a>
       <a href="#reservation">Reservierung</a>
       <a href="#contact">Kontakt</a>
@@ -80,10 +81,10 @@
 
       <div class="container hero-inner">
         <div class="hero-left reveal">
-          <p class="overline">Business V2 · Professionelles Restaurant-System</p>
-          <h1>Professionell, modern und klar auf Reservierungen ausgelegt.</h1>
+          <p class="overline">Business V3 · Catering & Events</p>
+          <h1>Professionell, modern und jetzt mit starken Catering- und Event-Bereichen.</h1>
           <p class="hero-text">
-            Business V2 bekommt jetzt einen eigenen Charakter: weniger Luxus-Show, mehr professionelles Restaurant-System mit klarer Struktur, Firmenkunden-Bereich, Catering-Fokus und stärkerer Conversion.
+            Business V3 baut den echten Business-Mehrwert aus: Catering, Firmenfeiern, private Events, Gruppenanfragen und klare Anfragewege für größere Umsätze.
           </p>
 
           <div class="hero-actions">
@@ -180,6 +181,95 @@
             <p>Klarere Call-to-Actions, bessere Struktur und stärkere Kontaktpunkte.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section catering-section" id="catering">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="overline">Catering & Events</p>
+          <h2>Für Firmenfeiern, Geburtstage und große Gruppen.</h2>
+          <p>Business V3 ergänzt Bereiche, mit denen Restaurants größere Anfragen und bessere Umsätze gewinnen können.</p>
+        </div>
+
+        <div class="catering-grid">
+          <article class="catering-card reveal tilt-card shine-card">
+            <div class="catering-image catering-one"></div>
+            <div class="catering-content">
+              <span>01</span>
+              <h3>Firmenfeiern</h3>
+              <p>Perfekt für Team-Events, Weihnachtsfeiern, Business Dinner und geschlossene Gesellschaften.</p>
+              <a href="#eventInquiry">Anfrage starten →</a>
+            </div>
+          </article>
+
+          <article class="catering-card reveal tilt-card shine-card">
+            <div class="catering-image catering-two"></div>
+            <div class="catering-content">
+              <span>02</span>
+              <h3>Catering außer Haus</h3>
+              <p>Vorbereitet für Buffets, Fingerfood, private Feiern und Veranstaltungen außerhalb des Restaurants.</p>
+              <a href="#eventInquiry">Catering anfragen →</a>
+            </div>
+          </article>
+
+          <article class="catering-card reveal tilt-card shine-card">
+            <div class="catering-image catering-three"></div>
+            <div class="catering-content">
+              <span>03</span>
+              <h3>Private Events</h3>
+              <p>Geburtstage, Jubiläen, Familienfeiern oder exklusive Dinner mit individueller Planung.</p>
+              <a href="#eventInquiry">Event planen →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section event-inquiry-section" id="eventInquiry">
+      <div class="container event-inquiry-grid">
+        <div class="event-inquiry-copy reveal">
+          <p class="overline">Event Anfrage</p>
+          <h2>Ein Formular für große und wertvolle Anfragen.</h2>
+          <p>Dieses Zusatzformular ist für Catering, Firmenkunden und größere Gruppen gedacht. Dadurch wirkt Business deutlich professioneller als Premium.</p>
+
+          <div class="event-benefits">
+            <div><strong>Gruppen</strong><span>10–100+ Personen</span></div>
+            <div><strong>Catering</strong><span>Extern oder im Haus</span></div>
+            <div><strong>Events</strong><span>Privat & geschäftlich</span></div>
+          </div>
+        </div>
+
+        <form class="event-form reveal shine-card" id="eventForm" action="https://formspree.io/f/DEIN-FORMSPREE-LINK" method="POST">
+          <div class="form-row">
+            <label><input type="text" name="event_name" placeholder=" " required><span>Name / Firma</span></label>
+            <label><input type="email" name="event_email" placeholder=" " required><span>E-Mail</span></label>
+          </div>
+
+          <div class="form-row">
+            <label><input type="tel" name="event_telefon" placeholder=" " required><span>Telefon</span></label>
+            <label><input type="number" name="event_personen" min="5" placeholder=" " required><span>Personenanzahl</span></label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <select name="event_art" required>
+                <option value="">Art der Anfrage wählen</option>
+                <option>Firmenfeier</option>
+                <option>Catering</option>
+                <option>Geburtstag</option>
+                <option>Private Veranstaltung</option>
+                <option>Sonstiges Event</option>
+              </select>
+            </label>
+            <label><input type="date" name="event_datum" required><span>Wunschdatum</span></label>
+          </div>
+
+          <label class="full-label"><textarea name="event_nachricht" placeholder=" "></textarea><span>Eventdetails</span></label>
+
+          <button class="btn btn-gold magnetic" type="submit">Event anfragen</button>
+          <p class="form-note" id="eventFormNote">Demo-Hinweis: Formspree-Link später ersetzen.</p>
+        </form>
       </div>
     </section>
 
@@ -495,7 +585,7 @@
     <div class="container footer-grid">
       <div>
         <strong>Restaurant Name</strong>
-        <p>Karivo Restaurant Business Vorlage — V2 Neues Design.</p>
+        <p>Karivo Restaurant Business Vorlage — V3 Catering & Events.</p>
       </div>
 
       <div>
