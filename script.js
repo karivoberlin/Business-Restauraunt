@@ -787,3 +787,78 @@ console.log("Restaurant Business V20 Agentur Final geladen");
 
   render();
 })();
+
+// Phase 3 Premium Reservierung
+(function(){
+  const guests = document.getElementById("guestCountPhase");
+  if (!guests) return;
+
+  const minus = document.getElementById("guestMinusPhase");
+  const plus = document.getElementById("guestPlusPhase");
+  const time = document.getElementById("reservationTimePhase");
+  const occasion = document.getElementById("reservationOccasionPhase");
+  const note = document.getElementById("reservationNotePhase");
+  const summary = document.getElementById("reservationSummaryPhase");
+  const presets = document.querySelectorAll(".reservation-preset-phase");
+  const form = document.getElementById("aurumReservationForm");
+  const message = document.getElementById("reservationFormMessage");
+
+  function updateReservation(){
+    const count = Number(guests.value || 1);
+    const selectedTime = time && time.value ? time.value : "Uhrzeit noch wählen";
+    const selectedOccasion = occasion && occasion.value ? occasion.value : "Anlass noch wählen";
+
+    if (count >= 10) {
+      note.textContent = "Private-Dining-Anfrage erkannt – wir stimmen Details persönlich ab.";
+    } else if (count >= 6) {
+      note.textContent = "Größere Gruppe erkannt – wir bereiten passende Tischoptionen vor.";
+    } else {
+      note.textContent = "Normale Tischreservierung";
+    }
+
+    if (summary) {
+      summary.querySelector("span").textContent = `${count} Personen · ${selectedTime} · ${selectedOccasion}`;
+    }
+  }
+
+  if (minus) minus.addEventListener("click", () => {
+    guests.value = Math.max(1, Number(guests.value) - 1);
+    updateReservation();
+  });
+
+  if (plus) plus.addEventListener("click", () => {
+    guests.value = Math.min(60, Number(guests.value) + 1);
+    updateReservation();
+  });
+
+  guests.addEventListener("input", updateReservation);
+  if (time) time.addEventListener("change", updateReservation);
+  if (occasion) occasion.addEventListener("change", updateReservation);
+
+  presets.forEach(button => {
+    button.addEventListener("click", () => {
+      presets.forEach(item => item.classList.remove("active"));
+      button.classList.add("active");
+
+      guests.value = button.dataset.guests;
+      if (time) time.value = button.dataset.time;
+      if (occasion) occasion.value = button.dataset.occasion;
+
+      const areaValue = button.dataset.area;
+      document.querySelectorAll('input[name="bereich"]').forEach(input => {
+        input.checked = input.value === areaValue;
+      });
+
+      updateReservation();
+    });
+  });
+
+  if (form && message) {
+    form.addEventListener("submit", () => {
+      message.textContent = "Ihre Reservierungsanfrage wird gesendet ...";
+      message.classList.add("success");
+    });
+  }
+
+  updateReservation();
+})();
