@@ -1,12 +1,12 @@
-# Restaurant Business V3 – Catering & Events
+# Restaurant Business V4 – Online Speisekarte
 
-Neu in V3:
-- Catering-Bereich
-- Firmenfeiern-Bereich
-- Private Events
-- eigenes Event-Anfrageformular
-- Business-Fokus stärker als Premium
-- bessere Bereiche für größere Kundenanfragen
+Neu in V4:
+- stärkere Online-Speisekarte
+- Suchfeld für Gerichte
+- Quick-Filter: Alle, Vegetarisch, Bestseller, Glutenfrei
+- zusätzliche Badges bei Gerichten
+- Business CTA unter der Speisekarte
+- bessere Struktur für Restaurants mit vielen Gerichten
 
 Nächster Schritt:
-Business V4 = Online-Speisekarte mit Suche, Filtern und Business-Layout verbessern.
+Business V5 = Reservierungssystem verbessern mit Zeitfenstern, Gästeanzahl-Logik und stärkerem Conversion-Funnel.

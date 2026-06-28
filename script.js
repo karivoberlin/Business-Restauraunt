@@ -8,3 +8,91 @@ if (eventForm) {
     eventFormNote.classList.add("success");
   });
 }
+
+// Business V4: Online-Speisekarte mit Suche und Quick-Filtern
+const menuSearch = document.getElementById("menuSearch");
+const quickFilters = document.querySelectorAll(".quick-filter");
+
+function renderBusinessMenu() {
+  if (!menuGrid) return;
+
+  menuGrid.classList.add("menu-changing");
+
+  setTimeout(() => {
+    const search = currentSearchTerm.toLowerCase().trim();
+    const items = (premiumMenuData[currentMenuCategory] || []).filter(item => {
+      const matchesSearch =
+        !search ||
+        item.name.toLowerCase().includes(search) ||
+        item.desc.toLowerCase().includes(search) ||
+        item.tag.toLowerCase().includes(search);
+
+      const matchesFilter =
+        currentQuickFilter === "all" ||
+        (item.labels || []).includes(currentQuickFilter);
+
+      return matchesSearch && matchesFilter;
+    });
+
+    if (!items.length) {
+      menuGrid.innerHTML = `
+        <article class="premium-menu-card shine-card">
+          <div>
+            <div class="food-icon">🔎</div>
+            <h3>Kein Gericht gefunden</h3>
+            <p>Ändere die Suche oder wähle einen anderen Filter.</p>
+          </div>
+          <div class="food-footer">
+            <span>Business Menü</span>
+            <strong>—</strong>
+          </div>
+        </article>
+      `;
+    } else {
+      menuGrid.innerHTML = items.map(item => `
+        <article class="premium-menu-card tilt-card shine-card" data-labels="${(item.labels || []).join(" ")}">
+          <div>
+            <div class="food-icon">${item.icon}</div>
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <div class="menu-badge-row">
+              ${(item.labels || []).map(label => `<span>${label}</span>`).join("")}
+            </div>
+          </div>
+          <div class="food-footer">
+            <span>${item.tag}</span>
+            <strong>${item.price}</strong>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    initTiltCards();
+    menuGrid.classList.remove("menu-changing");
+  }, 160);
+}
+
+premiumTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    currentMenuCategory = tab.dataset.category;
+    renderBusinessMenu();
+  });
+});
+
+if (menuSearch) {
+  menuSearch.addEventListener("input", () => {
+    currentSearchTerm = menuSearch.value;
+    renderBusinessMenu();
+  });
+}
+
+quickFilters.forEach(button => {
+  button.addEventListener("click", () => {
+    quickFilters.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    currentQuickFilter = button.dataset.filter;
+    renderBusinessMenu();
+  });
+});
+
+setTimeout(renderBusinessMenu, 300);
