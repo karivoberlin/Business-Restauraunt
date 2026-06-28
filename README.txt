@@ -1,23 +1,15 @@
-# Restaurant Business V12 – Ultimate Agentur-Version (richtig)
+# Restaurant Business V14 – Unterseiten optimiert
 
-Diese Version basiert sauber auf der funktionierenden V11.
+Änderung:
+- Startseite entschlackt
+- Jobs auf eigene Unterseite ausgelagert: jobs.html
+- SEO/Performance auf eigene Unterseite ausgelagert: seo.html
+- Navigation auf Startseite reduziert
+- Nur die wichtigsten Punkte auf der Startseite:
+  Start, Speisekarte, Catering, Bewertungen, Reservierung, Kontakt
+- Zusätzliche Links zu Jobs und SEO bleiben erreichbar
+- Navigation oben hat mehr Abstand und ist weniger gequetscht
 
-Final enthalten:
-- Online-Speisekarte
-- Reservierungssystem
-- Catering & Events
-- Event-Anfrageformular
-- Reviews & Social Trust
-- Instagram-/Social-Proof-Bereich
-- Karriere & Jobs
-- Bewerbungsformular
-- Mehrsprachigkeit DE/EN
-- SEO & Schema.org Grundlage
-- Conversion/Admin-Logik aus V10
-- Final Polish aus V11
-- Ultimate Final Section
-
-Das ist die finale Business-Version.
-
-
-V13: Navigation spacing fixed.
+Wichtig:
+Bei GitHub alle Dateien hochladen:
+index.html, jobs.html, seo.html, style.css, script.js, README.txt
