@@ -1,15 +1,14 @@
-# Restaurant Business V5 – Reservierungssystem
+# Restaurant Business V6 – Reviews & Social Trust
 
-Neu in V5:
-- stärkeres Reservierungssystem
-- Funnel-Anzeige mit 3 Schritten
-- Schnellwahl für typische Reservierungen
-- Personenanzahl mit Plus/Minus
-- automatische Hinweise bei Gruppen
-- Anlass-Auswahl
-- Uhrzeit-Zeitfenster
-- Reservierungs-Zusammenfassung
-- klarerer Conversion-Bereich
+Neu in V6:
+- großer Trust-Dashboard Bereich
+- Google-Style Score
+- Bewertungs-Karten
+- Service/Essen/Ambiente Balken
+- Social Proof Bereich
+- Instagram-Platzhalter
+- Presse-/Award-Badges
+- stärkerer Vertrauensaufbau vor Reservierung
 
 Nächster Schritt:
-Business V6 = Google Reviews / Instagram / Trust stärker ausbauen.
+Business V7 = Karriere-/Jobbereich für Restaurants.

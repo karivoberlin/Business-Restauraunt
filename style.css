@@ -510,3 +510,218 @@ select option{
     top:auto;
   }
 }
+
+/* Business V6 Reviews & Social Trust */
+.business-trust-section{
+  background:
+    radial-gradient(circle at 20% 25%, rgba(77,163,255,.15), transparent 32%),
+    linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+}
+
+.trust-dashboard{
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  backdrop-filter:blur(24px);
+  box-shadow:var(--shadow);
+  border-radius:46px;
+  padding:34px;
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:34px;
+  align-items:center;
+  margin-bottom:24px;
+}
+
+.trust-score{
+  text-align:center;
+  border-right:1px solid var(--line);
+  padding-right:28px;
+}
+
+.trust-score span{
+  color:var(--gold2);
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:12px;
+  font-weight:900;
+}
+
+.trust-score strong{
+  display:block;
+  font-family:"Cinzel",serif;
+  font-size:84px;
+  color:var(--gold2);
+  line-height:1;
+  margin:12px 0;
+}
+
+.trust-score p{
+  color:var(--gold2);
+  font-size:22px;
+}
+
+.trust-score small{
+  color:var(--muted);
+}
+
+.trust-bars{
+  display:grid;
+  gap:18px;
+}
+
+.trust-bars div{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:15px 18px;
+  overflow:hidden;
+  background:rgba(0,0,0,.24);
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+}
+
+.trust-bars em{
+  position:absolute;
+  left:0;
+  bottom:0;
+  height:3px;
+  width:var(--w);
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  box-shadow:var(--gold-shadow);
+}
+
+.trust-bars span,
+.trust-bars strong{
+  position:relative;
+  z-index:2;
+}
+
+.trust-bars strong{
+  color:var(--gold2);
+}
+
+.business-review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.business-review-card{
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  backdrop-filter:blur(24px);
+  box-shadow:var(--shadow);
+  border-radius:34px;
+  padding:26px;
+}
+
+.review-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.review-head div{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#06111f;
+  font-weight:900;
+}
+
+.review-head small{
+  color:var(--muted);
+}
+
+.business-review-card > strong{
+  color:var(--gold2);
+  letter-spacing:.12em;
+}
+
+.business-review-card p{
+  margin-top:14px;
+}
+
+.social-proof-section{
+  background:radial-gradient(circle at 80% 25%, rgba(77,163,255,.13), transparent 34%);
+}
+
+.social-proof-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:34px;
+  align-items:center;
+}
+
+.press-badges{
+  margin-top:26px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.press-badges span{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:12px 14px;
+  color:var(--gold2);
+  font-weight:900;
+  background:rgba(255,255,255,.06);
+}
+
+.business-instagram-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  grid-auto-rows:210px;
+  gap:16px;
+}
+
+.business-insta{
+  border:1px solid var(--line);
+  border-radius:30px;
+  display:grid;
+  place-items:end start;
+  padding:22px;
+  color:var(--gold2);
+  font-weight:900;
+  background:linear-gradient(rgba(0,0,0,.10),rgba(0,0,0,.64)),var(--img) center/cover;
+  box-shadow:var(--shadow);
+}
+
+.insta-a{
+  grid-row:span 2;
+  --img:url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=85");
+}
+.insta-b{--img:url("https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85")}
+.insta-c{--img:url("https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=900&q=85")}
+.insta-d{
+  grid-column:span 2;
+  --img:url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=85");
+}
+
+@media(max-width:1100px){
+  .trust-dashboard,
+  .business-review-grid,
+  .social-proof-grid,
+  .business-instagram-grid{
+    grid-template-columns:1fr;
+  }
+
+  .trust-score{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+    padding-right:0;
+    padding-bottom:28px;
+  }
+
+  .insta-a,
+  .insta-d{
+    grid-row:auto;
+    grid-column:auto;
+  }
+}
