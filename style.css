@@ -4008,3 +4008,14 @@ nav a,
     grid-template-columns:1fr;
   }
 }
+
+/* Phase4 */
+.events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:60px}
+.event-card{border:1px solid var(--line);border-radius:32px;overflow:hidden;background:linear-gradient(145deg,rgba(255,243,221,.12),rgba(110,75,42,.07));box-shadow:var(--shadow)}
+.event-card h3,.event-card p{padding:0 24px}.event-card p{padding-bottom:24px}
+.event-img{height:240px;background-size:cover;background-position:center;transition:.5s}
+.event-card:hover .event-img{transform:scale(1.08)}
+.e1{background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80')}
+.e2{background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80')}
+.e3{background-image:url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80')}
+.e4{background-image:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80')}

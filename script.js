@@ -862,3 +862,5 @@ console.log("Restaurant Business V20 Agentur Final geladen");
 
   updateReservation();
 })();
+
+if(window.gsap&&window.ScrollTrigger){gsap.utils.toArray('.event-card').forEach((c,i)=>gsap.from(c,{opacity:0,y:70,duration:1,delay:i*.08,scrollTrigger:{trigger:c,start:'top 85%'}}));}
