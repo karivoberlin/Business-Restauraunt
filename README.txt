@@ -1,18 +1,11 @@
-# Restaurant Business V9 – SEO & Performance
+Restaurant Business V10 – Conversion & Admin
 
-Neu in V9:
-- SEO-Sektion
-- Schema.org Restaurant JSON-LD
-- Robots Meta
-- Canonical Link
-- Theme Color
-- Local SEO Struktur
-- Performance-Hinweise
-- SEO Score Dashboard
-- SEO Cards für lokale Suche, Ladezeit und Suchmaschinen
-
-Wichtig:
-Im echten Kundenprojekt müssen Domain, Adresse, Telefonnummer, Bilder und Social Links ersetzt werden.
+Neu in V10:
+- Conversion-Optimierung vorbereitet
+- Admin-freundliche Struktur
+- Platzhalter für austauschbare Inhalte
+- Verbesserte CTA-Logik
+- Bessere Organisation für spätere Erweiterungen
 
 Nächster Schritt:
-Business V10 = Admin-freundliche Struktur + Content-Variablen.
+Business V11 = Final Polish
