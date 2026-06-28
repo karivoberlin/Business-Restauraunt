@@ -725,3 +725,193 @@ select option{
     grid-column:auto;
   }
 }
+
+/* Business V7 Karriere & Jobs */
+.career-section{
+  background:
+    radial-gradient(circle at 16% 24%, rgba(77,163,255,.15), transparent 32%),
+    linear-gradient(180deg, rgba(255,255,255,.02), transparent);
+}
+
+.career-hero{
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  backdrop-filter:blur(24px);
+  box-shadow:var(--shadow);
+  border-radius:46px;
+  padding:38px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  margin-bottom:26px;
+}
+
+.career-hero h3{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.jobs-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.job-card{
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  backdrop-filter:blur(24px);
+  box-shadow:var(--shadow);
+  border-radius:36px;
+  padding:30px;
+}
+
+.job-card > span{
+  color:var(--gold2);
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-size:12px;
+}
+
+.job-card h3{
+  margin:16px 0 10px;
+}
+
+.job-card ul{
+  list-style:none;
+  display:grid;
+  gap:8px;
+  margin-top:18px;
+}
+
+.job-card li{
+  color:var(--muted);
+  padding-left:18px;
+  position:relative;
+}
+
+.job-card li::before{
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--gold2);
+  font-weight:900;
+}
+
+.job-card a{
+  display:inline-block;
+  margin-top:22px;
+  color:var(--gold2);
+  font-weight:900;
+}
+
+.employer-section{
+  background:radial-gradient(circle at 80% 30%, rgba(77,163,255,.12), transparent 34%);
+}
+
+.employer-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:34px;
+  align-items:center;
+}
+
+.benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.benefit-card{
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  backdrop-filter:blur(24px);
+  box-shadow:var(--shadow);
+  border-radius:30px;
+  padding:24px;
+}
+
+.benefit-card span{
+  font-size:30px;
+}
+
+.benefit-card strong{
+  display:block;
+  color:var(--gold2);
+  margin:12px 0 6px;
+}
+
+.application-section{
+  background:radial-gradient(circle at 20% 25%, rgba(77,163,255,.13), transparent 34%);
+}
+
+.application-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:34px;
+  align-items:start;
+}
+
+.application-steps{
+  margin-top:28px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.application-steps div{
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:18px;
+  background:rgba(255,255,255,.06);
+}
+
+.application-steps strong{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#06111f;
+  margin-bottom:10px;
+}
+
+.application-steps span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.application-form{
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.055));
+  backdrop-filter:blur(24px);
+  box-shadow:var(--shadow);
+  border-radius:48px;
+  padding:36px;
+}
+
+@media(max-width:1100px){
+  .career-hero,
+  .jobs-grid,
+  .employer-grid,
+  .benefits-grid,
+  .application-grid,
+  .application-steps{
+    grid-template-columns:1fr;
+  }
+
+  .career-hero{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:620px){
+  .career-hero,
+  .application-form{
+    padding:24px;
+  }
+}

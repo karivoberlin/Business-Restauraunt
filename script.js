@@ -156,3 +156,14 @@ reservationPresets.forEach(button => {
 });
 
 setTimeout(updateReservationSummary, 300);
+
+// Business V7: Karriereformular
+const applicationForm = document.getElementById("applicationForm");
+const applicationNote = document.getElementById("applicationNote");
+
+if (applicationForm) {
+  applicationForm.addEventListener("submit", () => {
+    applicationNote.textContent = "Bewerbung wird gesendet ...";
+    applicationNote.classList.add("success");
+  });
+}

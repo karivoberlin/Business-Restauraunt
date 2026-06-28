@@ -1,14 +1,13 @@
-# Restaurant Business V6 – Reviews & Social Trust
+# Restaurant Business V7 – Karriere & Jobs
 
-Neu in V6:
-- großer Trust-Dashboard Bereich
-- Google-Style Score
-- Bewertungs-Karten
-- Service/Essen/Ambiente Balken
-- Social Proof Bereich
-- Instagram-Platzhalter
-- Presse-/Award-Badges
-- stärkerer Vertrauensaufbau vor Reservierung
+Neu in V7:
+- Karrierebereich
+- offene Stellen
+- Jobkarten für Koch, Servicekraft, Aushilfe
+- Arbeitgeber-Benefits
+- Schnellbewerbungsformular
+- Recruiting-Fokus für Restaurants
+- Business-Paket hebt sich weiter von Premium ab
 
 Nächster Schritt:
-Business V7 = Karriere-/Jobbereich für Restaurants.
+Business V8 = Mehrsprachigkeit DE/EN.
