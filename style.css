@@ -1301,3 +1301,34 @@ html[lang="en"] .translation-tabs .translation-tab:last-child{
     grid-template-columns:1fr;
   }
 }
+
+
+/* V13 Navigation spacing fix */
+.header-nav,
+nav ul,
+.nav-links{
+  gap:18px !important;
+  flex-wrap:wrap !important;
+}
+
+.header-nav a,
+nav a,
+.nav-links a{
+  padding:8px 4px;
+  white-space:nowrap;
+}
+
+@media (max-width:1400px){
+  .header-nav,
+  nav ul,
+  .nav-links{
+    gap:14px !important;
+  }
+}
+@media (max-width:1200px){
+  .header-nav,
+  nav ul,
+  .nav-links{
+    gap:10px !important;
+  }
+}

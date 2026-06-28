@@ -18,3 +18,6 @@ Final enthalten:
 - Ultimate Final Section
 
 Das ist die finale Business-Version.
+
+
+V13: Navigation spacing fixed.
